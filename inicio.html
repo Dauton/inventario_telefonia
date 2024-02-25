@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@500&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d8ed80570b.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <main class="corpo">
+        <nav class="menu">
+            <div class="menu-user-info">
+                <span>
+                    <h3>Bem-vindo(a)!</h3>
+                    <p>Dauton Félix</p>
+                <span>
+                <button type="button" id="btn-sair">Sair</button>
+            </div>
+
+            <div class="menu-divisoria">
+                <div></div><div></div><div></div>
+            </div>
+            <ul>
+                <li><a><i class="fa-solid fa-house"></i>Início<i class="fa-solid fa-angle-down"></i></a></li>
+                
+                <li id="menu_02"><a><i class="fa-solid fa-mobile-screen"></i>Dispositivos<i class="fa-solid fa-angle-down"></i></a>
+                    <ul id="menusub_02">
+                        <li><a href="#"><i class="fa-solid fa-arrow-pointer"></i>Cadastrar<i class="fa-solid fa-angle-right"></i></a></li>
+                        <li><a href="#"><i class="fa-solid fa-arrow-pointer"></i>Consultar<i class="fa-solid fa-angle-right"></i></a></li>
+                    </ul>
+                </li>
+                
+                <li id="menu_03"><a><i class="fa-solid fa-gear"></i>Admin<i class="fa-solid fa-angle-down"></i></a>
+                    <ul id="menusub_03">
+                        <li><a href="#"><i class="fa-solid fa-arrow-pointer"></i>Criar usuário<i class="fa-solid fa-angle-right"></i></a></li>
+                        <li><a href="#"><i class="fa-solid fa-arrow-pointer"></i>Gerenciar usuários<i class="fa-solid fa-angle-right"></i></a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <img src="img/id-logo-branco-extenso.png" class="menu-logo-id">
+        </nav>
+        <section class="principal">
+            <header class="cabecalho">
+                <div>
+                    <a href="#"><div id="cabecalho-my-cdc">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        <span>
+                            <h3>Meu Centro de Custo</h3>
+                        </span>
+                    </div></a>
+                    <a href="#"><div id="cabecalho-my-device">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        <span>
+                            <h3>Meu Dispositivo</h3>
+                        </span>
+                    </div></a>
+                </div>
+                <img src="img/sistema-logo.png">
+                <i class="fa-solid fa-bars" id="btn-menu"></i>
+            </header>
+            <article class="conteudo">
+                <header class="conteudo-cabecalho">
+                    <h3>TELA INICIAL</h3>
+                </header>
+                    <section class="conteudo-center">
+                        <h3>Últimos equipamentos adicionados</h3>
+                        <table border="1px">
+                            <thead>
+                                <td>Marca</td>
+                                <td>Modelo</td>
+                                <td>IMEI</td>
+                                <td>CDC</td>
+                                <td>Usuário</td>
+                                <td>Linha</td>
+                                <td>Ponto focal</td>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Samsung</td>
+                                    <td>Galaxy A03</td>
+                                    <td>1234567891234567</td>
+                                    <td>CDARCEX - 219002</td>
+                                    <td>Dauton Félix</td>
+                                    <td>35 91234-5678</td>
+                                    <td>Dauton Félix</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                <footer class="conteudo-rodape">
+                    <small>Inventário de Telefonia - ID DO BRASIL LOGISTICA LTDA - 2024</small>
+                </footer>
+            </article>
+        </section>
+    </main>
+
+    <script src="jquery.js"></script>
+    <script>
+        $("#menu_02").click(function() {
+            $("#menusub_02").slideToggle(200, "linear");
+            $("#menusub_03").slideUp(200, "linear");
+        });
+        $("#menu_03").click(function() {
+            $("#menusub_03").slideToggle(200, "linear");
+            $("#menusub_02").slideUp(200, "linear");
+        });
+
+        var btnMenu = false;
+        $("#btn-menu").click(function() {
+            if(!btnMenu) {
+                $(".menu").css({
+                    "left": "0",
+                    "transition": ".2s all"
+                });
+                btnMenu = true;
+            } else {
+                $(".menu").removeAttr('style').css({"transition": ".2s all"});
+                btnMenu = false;
+            }
+        })
+
+
+    </script>
+
+</body>
+</html>

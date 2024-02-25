@@ -1,0 +1,121 @@
+.menu {
+    width: 220px;
+    min-width: 220px;
+    height: 100%;
+    margin-right: 10px;
+    padding: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: var(--primary-color);
+    box-shadow: var(--primary-shadow);
+    border-radius: 0 10px 10px 0;
+    z-index: 2;
+}
+.menu-user-info {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    background: var(--white-color);
+    border-radius: 5px;
+    color: var(--terciary-color);
+}
+.menu-user-info div {
+    width: 100%;
+}
+#btn-sair {
+    margin-top: 10px;;
+    padding: 5px 10px;
+    border: none;
+    background: var(--terciary-color);
+    border-radius: 5px;
+    width: 100px;
+    color: var(--white-color);
+    font-weight: bold;
+}
+.menu-divisoria {
+    min-width: 200px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+.menu-divisoria div {
+    width: 5px;
+    height: 5px;
+    margin: 0 2px;
+    border-radius: 50px;
+    background: var(--secundary-color);
+}
+.menu ul {
+    min-width: 200px;
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.menu li a {
+    margin-bottom: 10px;
+    display: block;
+    background: var(--secundary-color);
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--white-color);
+    font-size: 13px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .2s all;
+}
+.menu li a:hover {
+    background: var(--terciary-color);
+    transition: .2s all;
+}
+.menu li i {
+    width: 15px;
+    text-align: center;
+}
+.menu .fa-angle-down, .menu .fa-angle-right, .menu .fa-arrow-pointer{
+    font-size: 11px;
+}
+.menu li ul {
+    display: none;
+    margin-bottom: 15px;
+}
+.menu li ul li a {
+    padding: 10px 15px;
+    background: var(--terciary-color);
+}
+.menu li ul li a:hover {
+    background: #001c25;
+    transition: .2s all;
+}
+.menu-logo-id {
+    width: 130px;
+    position: absolute;
+    bottom: 30px;
+}
+
+#btn-menu {
+    display: none;
+}
+
+@media screen and (max-width: 720px)
+{
+    
+    #btn-menu {
+        display: block;
+        cursor: pointer;
+        color: var(--terciary-color);
+    }
+
+    .menu  {
+        position: fixed;
+        top: 0;
+        border-radius: 0;
+        left: -220px;
+    }
+}
