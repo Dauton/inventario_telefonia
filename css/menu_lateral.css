@@ -1,6 +1,6 @@
 .menu {
-    width: 220px;
-    min-width: 220px;
+    width: 200px;
+    min-width: 200px;
     height: 100%;
     margin-right: 10px;
     padding: 10px;
@@ -9,8 +9,7 @@
     align-items: center;
     flex-direction: column;
     background: var(--primary-color);
-    box-shadow: var(--primary-shadow);
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 5px 5px 0;
     z-index: 2;
 }
 .menu-user-info {
@@ -19,9 +18,14 @@
     justify-content: center;
     text-align: center;
     padding: 10px;
-    background: var(--white-color);
+    background: #ffffff;
     border-radius: 5px;
+    font-size: 12px;
     color: var(--terciary-color);
+}
+.menu-user-info i {
+    font-size: 25px;
+    margin-bottom: 5px;
 }
 .menu-user-info div {
     width: 100%;
@@ -33,11 +37,11 @@
     background: var(--terciary-color);
     border-radius: 5px;
     width: 100px;
+    font-size: 10px;
     color: var(--white-color);
     font-weight: bold;
 }
 .menu-divisoria {
-    min-width: 200px;
     padding: 15px;
     display: flex;
     justify-content: center;
@@ -50,7 +54,7 @@
     background: var(--secundary-color);
 }
 .menu ul {
-    min-width: 200px;
+    min-width: 180px;
     list-style: none;
     margin-bottom: 10px;
 }
@@ -65,7 +69,7 @@
     align-items: center;
     justify-content: space-between;
     color: var(--white-color);
-    font-size: 13px;
+    font-size: 11px;
     text-decoration: none;
     cursor: pointer;
     transition: .2s all;
@@ -79,7 +83,7 @@
     text-align: center;
 }
 .menu .fa-angle-down, .menu .fa-angle-right, .menu .fa-arrow-pointer{
-    font-size: 11px;
+    font-size: 9px;
 }
 .menu li ul {
     display: none;
@@ -94,28 +98,47 @@
     transition: .2s all;
 }
 .menu-logo-id {
-    width: 130px;
+    width: 100px;
     position: absolute;
     bottom: 30px;
 }
 
-#btn-menu {
+#btn-menu, #back-menu {
     display: none;
 }
 
 @media screen and (max-width: 720px)
 {
-    
     #btn-menu {
         display: block;
+    }   
+    #btn-menu {
         cursor: pointer;
         color: var(--terciary-color);
+        z-index: 2;
     }
-
+    #back-menu {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: fixed;
+        background: rgba(0,0,0,.7);
+        z-index: 2;
+    }
     .menu  {
         position: fixed;
         top: 0;
         border-radius: 0;
         left: -220px;
+    }
+    .menu-user-info {
+        font-size: 15px;
+    }
+    .menu-user-info #btn-sair {
+        font-size: 13px;
+    }
+    .menu ul li a {
+        font-size: 14px;
     }
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Página inicial</title>
+    <title>Cadastro de dispositivo</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,30 +72,61 @@
                     <h3>PÁGINA INICIAL</h3>
                 </header>
                     <section class="conteudo-center">
-                        <h3>Últimos equipamentos adicionados</h3>
-                        <table border="1px">
-                            <thead>
-                                <td>Marca</td>
-                                <td>Modelo</td>
-                                <td>IMEI</td>
-                                <td>CDC</td>
-                                <td>Usuário</td>
-                                <td>Linha</td>
-                                <td>Ponto focal</td>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Samsung</td>
-                                    <td>Galaxy A03</td>
-                                    <td>1234567891234567</td>
-                                    <td>CDARCEX - 219002</td>
-                                    <td>Dauton Félix</td>
-                                    <td>35 91234-5678</td>
-                                    <td>Dauton Félix</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <p>Para mais dispositivos e informações pesquise na <a href="#">página de consulta.</a></p>
+                        <h3>Cadastrar um dispositivo</h3>
+
+                        <form class="">
+                            <i class="fa-solid fa-circle-plus"></i>
+                            <label><p>Marca</p>
+                                <input type="text" name="marca" id="marca" placeholder="Insira a marca" required>
+                            </label>
+                            <label><p>Modelo</p>
+                                <input type="text" name="modelo" id="modelo" placeholder="Insira o modelo" required>
+                            </label>
+                            <label><p>IMEI</p>
+                                <input type="text" name="imei" id="imei" placeholder="Insira o IMEI" required>
+                            </label>
+                            <label><p>Linha</p>
+                                <input type="text" name="linha" id="linha" placeholder="Insira a linha" required>
+                            </label>
+                            <label><p>Operadora</p>
+                                <input type="text" name="operadora" id="operadora" placeholder="Insira a operadora" required>
+                            </label>
+                            <label><p>Estado UF</p>
+                                <input type="text" name="uf" id="uf" placeholder="Insira a UF" required>
+                            </label>
+                            <label><p>Serviço</p>
+                                <input type="text" name="servico" id="servico" placeholder="Insira o serviço" required>
+                            </label>
+                            <label><p>Perfil</p>
+                                <input type="text" name="perfil" id="perfil" placeholder="Insira o perfil" required>
+                            </label>
+                            <label><p>Centro de Custo</p>
+                                <input type="text" name="cdc" id="cdc" placeholder="Insira o CDC" required>
+                            </label>
+                            <label><p>Unidade</p>
+                                <input type="text" name="unidade" id="unidade" placeholder="Insira a unidade" required>
+                            </label>
+                            <label><p>Nome Usuário</p>
+                                <input type="text" name="usuario_nome" id="usuario_nome" placeholder="Insira o usuário" required>
+                            </label>
+                            <label><p>Mat Usuário</p>
+                                <input type="text" name="usuario_mat" id="usuario_mat" placeholder="Insira a matrícula do usuário" required>
+                            </label>
+                            <label><p>E-mail Usuário</p>
+                                <input type="text" name="" id="usuario_email" placeholder="Insira o e-mail do usuário" required>
+                            </label>
+                            <label><p>Nome gestor</p>
+                                <input type="text" name="gestor" id="gestor" placeholder="Insira o gestor" required>
+                            </label>
+                            <label><p>Nome Ponto Focal</p>
+                                <input type="text" name="ponto_focal" id="ponto_focal" placeholder="Insira o ponto focal" required>
+                            </label>
+                            <div>
+                                <button type="submit">Cadastrar</button>
+                                <button type="reset">Resetar</button>
+                            </div>
+                        </form>
+                        
                     </section>
 
                 <footer class="conteudo-rodape">
