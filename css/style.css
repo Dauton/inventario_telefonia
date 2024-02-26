@@ -119,6 +119,9 @@ body {
 .conteudo-cabecalho {
     width: 100%;
     padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: linear-gradient(to right, var(--primary-color), var(--terciary-color));
     color: var(--white-color);
     font-style: italic;
@@ -162,8 +165,7 @@ body {
 .conteudo-rodape {
     width: 100%;
     padding: 5px;
-    position: absolute;
-    bottom: 10px;
+    margin-top: auto;
     color: #808080;
     text-align: center;
     font-size: 12px;
@@ -198,6 +200,9 @@ body {
 .conteudo-center form input:focus {
     outline-color: var(--primary-color);
 }
+input[type=number]::-webkit-inner-spin-button { 
+    appearance: none;
+}
 .conteudo-center form div {
     width: 100%;
     margin-top: 15px;
@@ -219,10 +224,23 @@ body {
     outline-color: var(--secundary-color);
 }
 
+.conteudo-cabecalho div {
+    display: none !important;
+}
+
 @media screen and (max-width: 720px)
 {
+    .conteudo-cabecalho div {
+        display: block !important;
+    }
+    #cabecalho-my-device, #cabecalho-my-cdc {
+        display: none;
+    }
     .corpo {
         padding: 10px;
+    }
+    .cabecalho, .conteudo {
+        box-shadow: 0 0 .3em #cdcdcd;
     }
     .cabecalho {
         padding: 20px;
@@ -252,6 +270,28 @@ body {
     .conteudo {
         width: 100%;
     }
+    .conteudo-cabecalho {
+        padding: 10px;
+    }
+    .conteudo-cabecalho div {
+        display: flex !important;
+        gap: 10px;
+    }
+    .conteudo-cabecalho .fa-house-laptop, .conteudo-cabecalho .fa-mobile-screen-button {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 60px;
+    }
+    .conteudo-cabecalho .fa-house-laptop {
+        background: #008000;
+    }
+    .conteudo-cabecalho .fa-mobile-screen-button {
+        background: #ffa500;
+    }
+    
     .conteudo-center table {
         font-size: 3px;
     }
@@ -285,8 +325,5 @@ body {
         width: 110px;
         padding: 7px;
         font-size: 15px;
-    }
-    .conteudo-rodape {
-        position: relative;
     }
 }
