@@ -5,9 +5,7 @@
     margin: 0;
     box-sizing: border-box;
 }
-*::-webkit-scrollbar {
-    display: none;
-}
+
 :root {
     --primary-color: #0088ff;;
     --secundary-color: #005876;
@@ -20,6 +18,20 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
+*::-webkit-scrollbar {
+    background: transparent;
+    width: 7px;
+    height: 7px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #0088ff;
+    border-radius: 60px;
+}
+
+*::-webkit-scrollbar-button {
+    background: transparent;
+}
 
 .corpo {
     width: 100%;
@@ -69,7 +81,7 @@ body {
     font-size: 25px;
 }
 #cabecalho-my-cdc {
-    background: #008000;
+    background: #00a000;
     transition: .1s all;
 }
 #cabecalho-my-device {
@@ -77,29 +89,29 @@ body {
     transition: .1s all;
 }
 #cabecalho-my-cdc i {
-    color: #005000;
+    color: #008000;
     transition: .1s all;
 }
 #cabecalho-my-device i {
-    color: #b77700;
+    color: #d78c00;
     transition: .1s all;
 }
 #cabecalho-my-cdc:hover {
-    background: #005000;
+    background: #008000;
     transition: .1s all;
 }
 
 #cabecalho-my-device:hover {
-    background: #b77700;
+    background: #d98d00;
     transition: .1s all;
 }
 #cabecalho-my-cdc:hover i {
-    color: #001d00;
+    color: #006700;
     transform: scale(1.1);
     transition: .2s all;
 }
 #cabecalho-my-device:hover i {
-    color: #523500;
+    color: #915e00;
     transform: scale(1.1);
     transition: .2s all;
 }
@@ -113,7 +125,6 @@ body {
     overflow: hidden;
     background: #ffffff;
     border-radius: 5px;
-    overflow: auto;
 }
 
 .conteudo-cabecalho {
@@ -134,29 +145,31 @@ body {
     padding: 10px;
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
+    overflow: scroll;
 }
 .conteudo-center h3 {
     font-size: 14px;
+    width: 100%;
+    text-align: center;
     margin-bottom: 10px;
 }
 .conteudo-center table {
     width: 100%;
     margin-bottom: 10px;
     border-collapse: collapse;
-    font-size: 10px;
+    font-size: 8px;
     box-shadow: .1em .2em .3em #cdcdcd;
-    border: 1px solid #cdcdcd;
 }
-.conteudo-center table thead {
-    background: var(--secundary-color);
+.conteudo-center table thead {background: linear-gradient(to right, var(--primary-color), var(--terciary-color));
+    
     color: var(--white-color);
     font-weight: bold;
 }
 .conteudo-center td {
-    padding: 5px 10px;
+    padding: 5px;
     text-align: center;
+    border: .1px solid #cdcdcd;
 }
 .conteudo-center p {
     font-size: 10px;
@@ -179,7 +192,7 @@ body {
     flex-wrap: wrap;
     gap: 10px 15px;
     border-radius: 5px;
-    box-shadow: .2em.2em .3em #cdcdcd;
+    box-shadow: 0 0 .3em #cdcdcd;
 }
 .conteudo-center form .fa-circle-plus {
     width: 100%;
@@ -219,6 +232,7 @@ input[type=number]::-webkit-inner-spin-button {
     border: none;
     border-radius: 5px;
     font-size: 10px;
+    cursor: pointer;
 }
 .conteudo-center form div button:focus {
     outline-color: var(--secundary-color);
@@ -226,6 +240,53 @@ input[type=number]::-webkit-inner-spin-button {
 
 .conteudo-cabecalho div {
     display: none !important;
+}
+#conteudo-center-consulta {
+    flex-direction: column;
+}
+#conteudo-center-consulta form {
+    margin-bottom: 20px;
+    box-shadow: 0 0 .3em #cdcdcd;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+#conteudo-center-consulta form label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#conteudo-center-consulta form p {
+    font-size: 10px;
+}
+#conteudo-center-consulta form label p{
+    font-size: 15px;
+}
+#conteudo-center-consulta form input {
+    width: 70%;
+}
+#conteudo-center-consulta form div {
+    margin-top: 5px;
+}
+#conteudo-center-consulta table tr td p {
+    width: 40px;
+    margin: 0 auto;
+    padding: 2px;
+    border: .1px solid #0088ff;
+    border-radius: 3px;
+    background: #b3dcff;
+    font-size: 8px;
+    text-align: center;
+    color: #005876;
+    font-weight: bold;
+    cursor: pointer;
+}
+#conteudo-center-consulta table tr #btn-excluir p {
+    background: red;
+    border-color: #850000;
+    background: #ffb9b9;
+    color: #850000;
 }
 
 @media screen and (max-width: 720px)
@@ -243,13 +304,13 @@ input[type=number]::-webkit-inner-spin-button {
         box-shadow: 0 0 .3em #cdcdcd;
     }
     .cabecalho {
-        padding: 20px;
+        padding: 20px 20px 20px 15px;
         background: #ffffff;
         border-radius: 10px;
         justify-content: space-between;
     }
     .cabecalho img {
-        width: 100px;
+        width: 80px;
     }
     .cabecalho div {
         position: fixed;
@@ -297,6 +358,7 @@ input[type=number]::-webkit-inner-spin-button {
     }
     .conteudo-center {
         width: 100%;
+        align-items:self-start;
     }
     .conteudo-center form {
         width: 100%;
@@ -309,8 +371,8 @@ input[type=number]::-webkit-inner-spin-button {
     .conteudo-center form label {
         width: 100%;
         text-align: center;
-        border-radius: 5px;
-        background: var(--secundary-color);
+        border-radius: 5px;background: linear-gradient(to right, var(--primary-color), var(--terciary-color));
+    
         color: var(--white-color);
     }
     .conteudo-center form input {
@@ -325,5 +387,15 @@ input[type=number]::-webkit-inner-spin-button {
         width: 110px;
         padding: 7px;
         font-size: 15px;
+    }
+    #conteudo-center-consulta {
+        width: 100%;
+    }
+    #conteudo-center-consulta form input {
+        width: 100%;
+    }
+    #conteudo-center-consulta table tr td p {
+        width: 25px;
+        font-size: 4px;
     }
 }

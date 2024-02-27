@@ -10,7 +10,11 @@
     flex-direction: column;
     background: var(--primary-color);
     border-radius: 0 5px 5px 0;
+    overflow: scroll;
     z-index: 2;
+}
+.menu::-webkit-scrollbar {
+    display: none;
 }
 .menu-user-info {
     min-width: 100%;
