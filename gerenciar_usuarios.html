@@ -3,9 +3,9 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Cadastro de dispositivo</title>
+    <title>Consulta de dispositivo</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='css/novo_usuario.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@500&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
@@ -71,34 +71,32 @@
             </header>
             <article class="conteudo">
                 <header class="conteudo-cabecalho">
-                    <h3>ADMIN / CADASTRAR USUÁRIO</h3>
+                    <h3>ADMIN / GERENCIAR USUÁRIOS</h3>
                     <div>
                         <i class="fa-solid fa-house-laptop"></i>
                         <i class="fa-solid fa-mobile-screen-button"></i>
                     </div>
                 </header>
-                    <section class="conteudo-center">
-                        <h3>Cadastrar um usuário</h3>
-
-                        <form class="">
-                            <i class="fa-solid fa-user-plus"></i>
-                            <label><p>Nome completo</p>
-                                <input type="text" name="nome" id="nome" placeholder="Insira o nome completo" required>
-                            </label>
-                            <label><p>Usuário</p>
-                                <input type="text" name="usuario" id="usuario" placeholder="Insira o usuário" required>
-                            </label>
-                            <label><p>Unidade</p>
-                                <input type="text" name="unudade" id="unidade" placeholder="Insira a unidade" required>
-                            </label>
-                            <label><p>Senha</p>
-                                <input type="password" name="senha" id="senha" placeholder="Insira a senha" required>
-                            </label>
-
-                            <button type="submit" id="btn-cad-user" name="btn-cad-user">Cadastrar</button>
-
-                        </form>
-                        
+                    <section class="conteudo-center" id="conteudo-center-consulta">
+                        <h3>Grenciamento de usuários</h3>
+                        <table>
+                            <thead>
+                                <td>Nome completo</td>
+                                <td>Usuário</td>
+                                <td>Unidade</td>
+                                <td>Editar</td>
+                                <td>Excluir</td>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Dauton Pereira Félix</td>
+                                    <td>dpfelix</td>
+                                    <td>CDARCEX</td>
+                                    <td id="btn-editar"><p>Editar</p></td>
+                                    <td id="btn-excluir"><p>Excluir</p></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </section>
 
                 <footer class="conteudo-rodape">

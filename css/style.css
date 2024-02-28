@@ -159,6 +159,7 @@ body {
     margin-bottom: 10px;
     border-collapse: collapse;
     font-size: 8px;
+    border: .1px solid #cdcdcd;
     box-shadow: .1em .2em .3em #cdcdcd;
 }
 .conteudo-center table thead {background: linear-gradient(to right, var(--primary-color), var(--terciary-color));
@@ -169,7 +170,7 @@ body {
 .conteudo-center td {
     padding: 5px;
     text-align: center;
-    border: .1px solid #cdcdcd;
+    border-bottom: .1px solid #cdcdcd;
 }
 .conteudo-center p {
     width: 100%;
@@ -272,10 +273,10 @@ input[type=number]::-webkit-inner-spin-button {
     margin-top: 5px;
 }
 #conteudo-center-consulta table tr td p {
-    width: 40px;
+    width: 50px;
     margin: 0 auto;
     padding: 2px;
-    border: .1px solid #0088ff;
+    border: .1px solid var(--primary-color);
     border-radius: 3px;
     background: #b3dcff;
     font-size: 8px;
@@ -285,9 +286,8 @@ input[type=number]::-webkit-inner-spin-button {
     cursor: pointer;
 }
 #conteudo-center-consulta table tr #btn-excluir p {
-    background: red;
-    border-color: #850000;
-    background: #ffb9b9;
+    border-color: #ff0000;
+    background: #ffcccc;
     color: #850000;
 }
 
@@ -397,7 +397,7 @@ input[type=number]::-webkit-inner-spin-button {
         width: 100%;
     }
     #conteudo-center-consulta table tr td p {
-        width: 25px;
-        font-size: 4px;
+        width: 30px;
+        font-size: 5px;
     }
 }
