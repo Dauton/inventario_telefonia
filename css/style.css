@@ -206,14 +206,18 @@ body {
 .conteudo-center form label p{
     margin-bottom: 2px;
 }
-.conteudo-center form input {
+.conteudo-center form input, .conteudo-center form select {
     width: 100%;
     padding: 5px;
     font-size: 10px;
     border: 1px solid #808080;
     border-radius: 2px;
 }
-.conteudo-center form input:focus {
+.conteudo-center form select {
+    width: 133px;
+    padding: 5px 0;
+}
+.conteudo-center form input:focus, .conteudo-center form select:focus {
     outline-color: var(--primary-color);
 }
 input[type=number]::-webkit-inner-spin-button { 
@@ -377,9 +381,15 @@ input[type=number]::-webkit-inner-spin-button {
     
         color: var(--white-color);
     }
-    .conteudo-center form input {
+    .conteudo-center form input, .conteudo-center form select {
+        width: 100%;
+        background: #ffffff;
         padding: 8px;
         font-size: 13px;
+    }
+    .conteudo-center form select {
+        padding: 8px 4px;
+        color: #707070;
     }
     .conteudo-center form label p {
         margin: 6px;
