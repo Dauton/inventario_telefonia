@@ -52,14 +52,14 @@
     justify-content: center;
 }
 .menu-divisoria div {
-    width: 5px;
-    height: 5px;
+    width: 4px;
+    height: 4px;
     margin: 0 2px;
     border-radius: 50px;
     background: var(--secundary-color);
 }
 .menu ul {
-    min-width: 180px;
+    min-width: 100%;
     list-style: none;
     margin-bottom: 10px;
 }
@@ -95,7 +95,6 @@
     margin-bottom: 15px;
 }
 .menu li ul li a {
-    padding: 10px 15px;
     background: var(--terciary-color);
 }
 .menu li ul li a:hover {
@@ -104,8 +103,7 @@
 }
 .menu-logo-id {
     width: 100px;
-    position: absolute;
-    bottom: 30px;
+    margin: auto 0 10px 0;
 }
 
 #btn-menu, #back-menu {
@@ -132,10 +130,11 @@
         z-index: 2;
     }
     .menu  {
+        width: 260px;
         position: fixed;
         top: 0;
         border-radius: 0;
-        left: -220px;
+        left: -260px;
     }
     .menu-user-info {
         font-size: 15px;

@@ -5,7 +5,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Cadastro de dispositivo</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/novo_usuario.css'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@500&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
@@ -78,59 +78,25 @@
                     </div>
                 </header>
                     <section class="conteudo-center">
-                        <h3>Cadastrar um dispositivo</h3>
+                        <h3>Cadastrar um usuário</h3>
 
                         <form class="">
-                            <i class="fa-solid fa-circle-plus"></i>
-                            <label><p>Marca</p>
-                                <input type="text" name="marca" id="marca" placeholder="Insira a marca" required>
+                            <i class="fa-solid fa-user-plus"></i>
+                            <label><p>Nome completo</p>
+                                <input type="text" name="nome" id="nome" placeholder="Insira o nome completo" required>
                             </label>
-                            <label><p>Modelo</p>
-                                <input type="text" name="modelo" id="modelo" placeholder="Insira o modelo" required>
-                            </label>
-                            <label><p>IMEI</p>
-                                <input type="number" name="imei" id="imei" placeholder="Insira o IMEI" required>
-                            </label>
-                            <label><p>Linha</p>
-                                <input type="text" name="linha" id="linha" placeholder="Insira a linha" required>
-                            </label>
-                            <label><p>Operadora</p>
-                                <input type="text" name="operadora" id="operadora" placeholder="Insira a operadora" required>
-                            </label>
-                            <label><p>Estado UF</p>
-                                <input type="text" name="uf" id="uf" placeholder="Insira a UF" required>
-                            </label>
-                            <label><p>Serviço</p>
-                                <input type="text" name="servico" id="servico" placeholder="Insira o serviço" required>
-                            </label>
-                            <label><p>Perfil</p>
-                                <input type="text" name="perfil" id="perfil" placeholder="Insira o perfil" required>
-                            </label>
-                            <label><p>Centro de Custo</p>
-                                <input type="number" name="cdc" id="cdc" placeholder="Insira o CDC" required>
+                            <label><p>Usuário</p>
+                                <input type="text" name="usuario" id="usuario" placeholder="Insira o usuário" required>
                             </label>
                             <label><p>Unidade</p>
-                                <input type="text" name="unidade" id="unidade" placeholder="Insira a unidade" required>
+                                <input type="text" name="unudade" id="unidade" placeholder="Insira a unidade" required>
                             </label>
-                            <label><p>Nome Usuário</p>
-                                <input type="text" name="usuario_nome" id="usuario_nome" placeholder="Insira o usuário" required>
+                            <label><p>Senha</p>
+                                <input type="password" name="senha" id="senha" placeholder="Insira a senha" required>
                             </label>
-                            <label><p>Mat Usuário</p>
-                                <input type="text" name="usuario_mat" id="usuario_mat" placeholder="Insira a matrícula do usuário" required>
-                            </label>
-                            <label><p>E-mail Usuário</p>
-                                <input type="text" name="" id="usuario_email" placeholder="Insira o e-mail do usuário" required>
-                            </label>
-                            <label><p>Nome gestor</p>
-                                <input type="text" name="gestor" id="gestor" placeholder="Insira o gestor" required>
-                            </label>
-                            <label><p>Nome Ponto Focal</p>
-                                <input type="text" name="ponto_focal" id="ponto_focal" placeholder="Insira o ponto focal" required>
-                            </label>
-                            <div>
-                                <button type="submit">Cadastrar</button>
-                                <button type="reset">Resetar</button>
-                            </div>
+
+                            <button type="submit" id="btn-cad-user" name="btn-cad-user">Cadastrar</button>
+
                         </form>
                         
                     </section>
@@ -161,7 +127,7 @@
                     "transition": ".2s all"
                 });
                 $("#back-menu").fadeIn(200);
-                $("#btn-menu").css({"color": "#f1f1f1"});
+                $("#btn-menu").css({"color": "#f1f1f1"})
                 btnMenu = true;
             } else {
                 $(".menu, #btn-menu").removeAttr('style').css({"transition": ".2s all"});
@@ -169,6 +135,8 @@
                 btnMenu = false;
             }
         });
+
+
     </script>
 
 </body>

@@ -1,0 +1,322 @@
+@import url(menu_lateral.css);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0088ff;;
+    --secundary-color: #005876;
+    --terciary-color:#00384b;
+    --white-color: #f1f1f1;
+    --primary-shadow: 0 0 .5em #808080
+}
+body {
+    font-family: 'Playpen Sans', cursive;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+*::-webkit-scrollbar {
+    background: transparent;
+    width: 7px;
+    height: 7px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #0088ff;
+    border-radius: 60px;
+}
+
+*::-webkit-scrollbar-button {
+    background: transparent;
+}
+
+.corpo {
+    width: 100%;
+    height: 100%;
+    padding: 10px 10px 10px 0;
+    position: absolute;
+    display: flex;
+    background: var(--white-color);
+}
+
+.principal {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cabecalho {
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cabecalho img {
+    width: 120px;
+    margin-right: 20px;
+}
+.cabecalho a {
+    text-decoration: none;
+}
+.cabecalho div {
+    display: flex;
+    gap: 10px;
+}
+.cabecalho div div {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 10px;
+}
+.cabecalho i {
+    font-size: 25px;
+}
+#cabecalho-my-cdc {
+    background: #00a000;
+    transition: .1s all;
+}
+#cabecalho-my-device {
+    background: #ffa500;
+    transition: .1s all;
+}
+#cabecalho-my-cdc i {
+    color: #008000;
+    transition: .1s all;
+}
+#cabecalho-my-device i {
+    color: #d78c00;
+    transition: .1s all;
+}
+#cabecalho-my-cdc:hover {
+    background: #008000;
+    transition: .1s all;
+}
+
+#cabecalho-my-device:hover {
+    background: #d98d00;
+    transition: .1s all;
+}
+#cabecalho-my-cdc:hover i {
+    color: #006700;
+    transform: scale(1.1);
+    transition: .2s all;
+}
+#cabecalho-my-device:hover i {
+    color: #915e00;
+    transform: scale(1.1);
+    transition: .2s all;
+}
+.conteudo {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    background: #ffffff;
+    border-radius: 5px;
+}
+
+.conteudo-cabecalho {
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, var(--primary-color), var(--terciary-color));
+    color: var(--white-color);
+    font-style: italic;
+}
+.conteudo-cabecalho h3 {
+    font-size: 13px;
+    font-weight: 300;
+}
+.conteudo-center {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: scroll;
+}
+.conteudo-center h3 {
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.conteudo-center p {
+    font-size: 10px;
+}
+
+.conteudo-rodape {
+    width: 100%;
+    padding: 5px;
+    margin-top: auto;
+    color: #808080;
+    text-align: center;
+    font-size: 12px;
+}
+.conteudo-center form {
+    width: 250px;
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 .3em #cdcdcd;
+}
+.conteudo-center form .fa-user-plus {
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    color: var(--secundary-color);
+}
+.conteudo-center form label {
+    width: 100%;
+}
+.conteudo-center form label p{
+    margin-bottom: 2px;
+}
+.conteudo-center form input {
+    width: 100%;
+    padding: 5px;
+    font-size: 10px;
+    border: 1px solid #808080;
+    border-radius: 2px;
+}
+.conteudo-center form input:focus {
+    outline-color: var(--primary-color);
+}
+input[type=number]::-webkit-inner-spin-button { 
+    appearance: none;
+}
+.conteudo-center form div {
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.conteudo-center form button {
+    width: 80px;
+    margin-top: 10px;
+    padding: 5px;
+    background: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 10px;
+    cursor: pointer;
+}
+.conteudo-center form div button:focus {
+    outline-color: var(--secundary-color);
+}
+
+.conteudo-cabecalho div {
+    display: none !important;
+}
+#conteudo-center-consulta {
+    flex-direction: column;
+}
+#conteudo-center-consulta form {
+    margin-bottom: 20px;
+    box-shadow: 0 0 .3em #cdcdcd;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+#conteudo-center-consulta form label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#conteudo-center-consulta form p {
+    font-size: 10px;
+}
+#conteudo-center-consulta form label p{
+    font-size: 15px;
+}
+#conteudo-center-consulta form input {
+    width: 70%;
+}
+#conteudo-center-consulta form div {
+    margin-top: 5px;
+}
+@media screen and (max-width: 720px)
+{
+    .conteudo-cabecalho div {
+        display: block !important;
+    }
+    #cabecalho-my-device, #cabecalho-my-cdc {
+        display: none;
+    }
+    .corpo {
+        padding: 10px;
+    }
+    .cabecalho, .conteudo {
+        box-shadow: 0 0 .3em #cdcdcd;
+    }
+    .cabecalho {
+        padding: 20px 20px 20px 15px;
+        background: #ffffff;
+        border-radius: 10px;
+        justify-content: space-between;
+    }
+    .cabecalho img {
+        width: 80px;
+    }
+    .cabecalho div {
+        position: fixed;
+        z-index: 2;
+    }
+
+    #cabecalho-my-device, #cabecalho-my-cdc {
+        padding: 10px;
+        position: fixed;
+        right: -125px;
+        bottom: 40px;
+        z-index: 2;
+    }
+    #cabecalho-my-device {
+        right: -97px;
+        bottom: 100px;
+    }
+    .conteudo {
+        width: 100%;
+    }
+    .conteudo-cabecalho {
+        padding: 10px;
+    }
+    .conteudo-cabecalho div {
+        display: flex !important;
+        gap: 10px;
+    }
+    .conteudo-cabecalho .fa-house-laptop, .conteudo-cabecalho .fa-mobile-screen-button {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 60px;
+    }
+    .conteudo-cabecalho .fa-house-laptop {
+        background: #008000;
+    }
+    .conteudo-cabecalho .fa-mobile-screen-button {
+        background: #ffa500;
+    }
+}
