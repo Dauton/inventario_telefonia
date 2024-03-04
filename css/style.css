@@ -162,8 +162,8 @@ body {
     border: .1px solid #cdcdcd;
     box-shadow: .1em .2em .3em #cdcdcd;
 }
-.conteudo-center table thead {background: linear-gradient(to right, var(--primary-color), var(--terciary-color));
-    
+.conteudo-center table thead {
+    background: linear-gradient(to right, var(--primary-color), var(--terciary-color));
     color: var(--white-color);
     font-weight: bold;
 }
@@ -172,6 +172,24 @@ body {
     text-align: center;
     border-bottom: .1px solid #cdcdcd;
 }
+
+#conteudo-center-consulta table tr td p {
+    width: 50px;
+    margin: 0 auto;
+    padding: 5px 2px;
+    border-radius: 3px;
+    background: #b3dcff;
+    font-size: 8px;
+    text-align: center;
+    color: #005876;
+    font-weight: bold;
+    cursor: pointer;
+}
+#conteudo-center-consulta table tr #btn-excluir p {
+    background: #ffcccc;
+    color: #850000;
+}
+
 .conteudo-center p {
     width: 100%;
     font-size: 10px;
@@ -277,23 +295,6 @@ input[type=number]::-webkit-inner-spin-button {
 #conteudo-center-consulta form div {
     margin-top: 5px;
 }
-#conteudo-center-consulta table tr td p {
-    width: 50px;
-    margin: 0 auto;
-    padding: 5px 2px;
-    border-radius: 3px;
-    background: #b3dcff;
-    font-size: 8px;
-    text-align: center;
-    color: #005876;
-    font-weight: bold;
-    cursor: pointer;
-}
-#conteudo-center-consulta table tr #btn-excluir p {
-    background: #ffcccc;
-    color: #850000;
-}
-
 @media screen and (max-width: 720px)
 {
     .conteudo-cabecalho div {
@@ -358,12 +359,18 @@ input[type=number]::-webkit-inner-spin-button {
         background: #ffa500;
     }
     
-    .conteudo-center table {
-        font-size: 3px;
-    }
     .conteudo-center {
         width: 100%;
         align-items:self-start;
+    }
+    .conteudo-center table {
+        font-size: 3px;
+    }
+    .conteudo-center table td {
+        padding: 2px;
+    }
+    #conteudo-center-consulta table tr td p {
+        padding: 2px;
     }
     .conteudo-center form {
         width: 100%;
