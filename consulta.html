@@ -230,7 +230,9 @@
                             </tbody>
                         </table>
                     </section>
-
+                    
+                <button type="button" id="btn-excel" title="Extrair para Excel"><img src="img/logo-excel.png"></button>
+                
                 <footer class="conteudo-rodape">
                     <small>Inventário de Telefonia - ID DO BRASIL LOGISTICA LTDA - 2024</small>
                 </footer>
@@ -238,36 +240,8 @@
         </section>
     </main>
 
-    <script src="jquery.js"></script>
-    <script>
-        $("#menu_02").click(function() {
-            $("#menusub_02").slideToggle(200, "linear");
-            $("#menusub_03").slideUp(200, "linear");
-        });
-        $("#menu_03").click(function() {
-            $("#menusub_03").slideToggle(200, "linear");
-            $("#menusub_02").slideUp(200, "linear");
-        });
-
-        var btnMenu = false;
-        $("#btn-menu, #back-menu").click(function() {
-            if(!btnMenu) {
-                $(".menu").css({
-                    "left": "0",
-                    "transition": ".2s all"
-                });
-                $("#back-menu").fadeIn(200);
-                $("#btn-menu").css({"color": "#f1f1f1"})
-                btnMenu = true;
-            } else {
-                $(".menu, #btn-menu").removeAttr('style').css({"transition": ".2s all"});
-                $("#back-menu").fadeOut(200);
-                btnMenu = false;
-            }
-        });
-
-
-    </script>
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/javascript.js"></script>
 
 </body>
 </html>

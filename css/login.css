@@ -79,7 +79,7 @@ body {
     display: flex;
     align-items: center;
     background: var(--primary-color);
-    font-size: 10px;
+    font-size: 12px;
     color: var(--white-color);
 }
 .center form input {
@@ -94,6 +94,7 @@ body {
 .center form div .fa-eye, .center form div .fa-eye-slash {
     background: #ffffff;
     color: var(--primary-color);
+    cursor: pointer;
 }
 .center form button {
     width: 100px;

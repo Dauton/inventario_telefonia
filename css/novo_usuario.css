@@ -82,28 +82,28 @@ body {
 }
 #cabecalho-my-cdc {
     background: #00a000;
-    transition: .1s all;
+    transition: background .2s;
 }
 #cabecalho-my-device {
     background: #ffa500;
-    transition: .1s all;
+    transition: background .2s;
 }
 #cabecalho-my-cdc i {
     color: #008000;
-    transition: .1s all;
+    transition: .2s;
 }
 #cabecalho-my-device i {
     color: #d78c00;
-    transition: .1s all;
+    transition: .2s;
 }
 #cabecalho-my-cdc:hover {
     background: #008000;
-    transition: .1s all;
+    transition: background .2s;
 }
 
 #cabecalho-my-device:hover {
     background: #d98d00;
-    transition: .1s all;
+    transition: background .2s;
 }
 #cabecalho-my-cdc:hover i {
     color: #006700;
