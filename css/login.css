@@ -25,19 +25,25 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to top left, #000000, var(--terciary-color), #000000);
+    background: var(--white-color);
 }
 .center {
     width: 600px;
-    height: 400px;
     display: flex;
     font-size: 13px;
+    box-shadow: .2em .2em 1em #cdcdcd ;
+}
+.center h1 {
+    font-size: 20px;
+}
+.center h2 {
+    font-size: 15px;
 }
 
 .center form, .left-form {
     width: 50%;
     height: 100%;
-    padding: 20px;
+    padding: 40px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,9 +52,10 @@ body {
 }
 
 .left-form {
+    height: inherit;
     text-align: center;
     color: var(--white-color);
-    background: url(../img/background-left-form.jpg) no-repeat;
+    background: url(../img/background-left-form.jpg);
     background-size: 100% 100%;
 }
 .left-form img {
@@ -64,6 +71,7 @@ body {
 }
 .center form label p {
     text-align: left;
+    margin-bottom: 3px;
 }
 .center form label div {
     width: 100%;
@@ -71,10 +79,8 @@ body {
     display: flex;
     border-radius: 5px;
     overflow: hidden;
-    box-shadow: .2em .2em .3em #cdcdcd;
 }
 .center form i {
-    height: 100%;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -86,20 +92,26 @@ body {
     width: 100%;
     padding: 5px;
     border: none;
+    background: #eaf5ff;
     border-radius: 0 5px 5px 0;
 }
 .center form input:focus {
     outline: none;
 }
+.center form div {
+    position: relative;
+}
 .center form div .fa-eye, .center form div .fa-eye-slash {
-    background: #ffffff;
+    background: transparent;
     color: var(--primary-color);
+    position: absolute;
+    right: 0;
     cursor: pointer;
 }
 .center form button {
-    width: 100px;
+    width: 80%;
     margin: 15px 0;
-    padding: 4px;
+    padding: 7px;
     background: var(--primary-color);
     border: none;
     border-radius: 5px;
@@ -111,7 +123,7 @@ body {
 .rodape {
     position: fixed;
     bottom: 10px;
-    color: #cdccdc;
+    color: #808080;
     font-size: 12px;
     font-style: italic;
 }
@@ -140,11 +152,14 @@ body {
     }
     .left-form, .center form {
         width: 100%;
+        padding: 10px;
     }
     .left-form {
+        padding: 20px;
         border-radius: 5px 5px 0 0;
     }
     .center form {
+        padding-top: 30px;
         border-radius: 0 0 5px 5px;
     }
 }
