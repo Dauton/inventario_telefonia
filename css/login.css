@@ -146,7 +146,8 @@ body {
         display: none;
     }
     .center {
-        width: 300px;
+        width: 85%;
+        max-width: 400px;
         flex-direction: column;
         border-radius: 10px;
     }

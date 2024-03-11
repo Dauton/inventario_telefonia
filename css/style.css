@@ -215,6 +215,7 @@ body {
 }
 .conteudo-center form label p{
     margin-bottom: 2px;
+    text-align: left;
 }
 .conteudo-center form input, .conteudo-center form select {
     width: 100%;
@@ -225,10 +226,13 @@ body {
 }
 .conteudo-center form select {
     width: 133px;
-    padding: 5px 0;
+    padding: 4.5px 0;
 }
 .conteudo-center form input:focus, .conteudo-center form select:focus {
     outline-color: var(--primary-color);
+}
+.conteudo-center form select option {
+    color: #303030;
 }
 input[type=number]::-webkit-inner-spin-button { 
     appearance: none;
