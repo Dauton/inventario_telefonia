@@ -215,7 +215,6 @@ body {
 }
 .conteudo-center form label p{
     margin-bottom: 2px;
-    text-align: left;
 }
 .conteudo-center form input, .conteudo-center form select {
     width: 100%;
