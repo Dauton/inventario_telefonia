@@ -1,22 +1,9 @@
-<?php
-
-    require_once "php/conexao_bd.php";
-    require_once "php/src/Dispositivo.php";
-
-// EXIBE OS 10 ÚLTIMOS DISPOSITIVOS CADASTR5ADOS...
-    $dispositivo = new Dispositivo($mysql);
-    $dispositivos = $dispositivo->getUltimosCadastrados();
-//____________________________________________________
-
-?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Página inicial</title>
+    <title>Consulta de dispositivo</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <meta name="desciption" content="Invenário de telefonia corporativa">
     <meta name="author" content="Dauton Pereira Félix - 2024">
@@ -86,45 +73,71 @@
             </header>
             <article class="conteudo">
                 <header class="conteudo-cabecalho">
-                    <h3>INÍCIO</h3>
+                    <h3>DISPOSITIVOS / CONSULTAR</h3>
                     <div>
                         <i class="fa-solid fa-house-laptop"></i>
                         <i class="fa-solid fa-mobile-screen-button"></i>
                     </div>
                 </header>
-                    <section class="conteudo-center">
-                        <h3>Últimos equipamentos adicionados</h3>
+                    <section class="conteudo-center" id="conteudo-center-consulta">
+                        <h3>Consulta de Dispositivos</h3>
+
+                        <form>
+                            <label><p>Campo de busca</p>
+                                <input type="search" name="busca" id="busca" placeholder="Complete com alguma característica" required>
+                            </label>
+                            <div>
+                                <button type="submit">Buscar</button>
+                            </div>
+                            <p>O resultado será exibido abaixo</p>
+                        </form>
                         <table>
                             <thead>
                                 <td>Marca</td>
                                 <td>Modelo</td>
                                 <td>IMEI</td>
-                                <td>CDC</td>
-                                <td>Usuário</td>
                                 <td>Linha</td>
-                                <td>Ponto focal</td>
-                                <td>Data</td>
+                                <td>Operadora</td>
+                                <td>Estado UF</td>
+                                <td>Serviço</td>
+                                <td>Perfil</td>
+                                <td>Centro de Custo</td>
+                                <td>Unidade</td>
+                                <td>Nome Usuário</td>
+                                <td>Mat Usuário</td>
+                                <td>E-mail Usuário</td>
+                                <td>Nome Gestor</td>
+                                <td>Nome Ponto Focal</td>
+                                <td>Editar</td>
+                                <td>Excluir</td>
                             </thead>
                             <tbody>
-                            <!-- EXIBE OS 10 ÚLTIMOS DISPOSITIVOS CADASTR5ADOS... -->
-                                <?php foreach($dispositivos as $dispositivo) : ?>
                                 <tr>
-                                    <td><?= $dispositivo['marca'] ?></td>
-                                    <td><?= $dispositivo['modelo'] ?></td>
-                                    <td><?= $dispositivo['imei'] ?></td>
-                                    <td><?= $dispositivo['cdc'] ?></td>
-                                    <td><?= $dispositivo['nome_usuario'] ?></td>
-                                    <td><?= $dispositivo['linha'] ?></td>
-                                    <td><?= $dispositivo['nome_ponto_focal'] ?></td>
-                                    <td><?= $dispositivo['data_cadastro'] ?></td>
+                                    <td>Samsung</td>
+                                    <td>Galaxy A03</td>
+                                    <td>1234567891234567</td>
+                                    <td>35999955678</td>
+                                    <td>VIVO</td>
+                                    <td>MG</td>
+                                    <td>Movel</td>
+                                    <td>VOZ ILIMITADO + 4GB</td>
+                                    <td>192003</td>
+                                    <td>CDARCEX</td>
+                                    <td>Dauton Félix</td>
+                                    <td>500838</td>
+                                    <td>dpfelix@id-logistics.com</td>
+                                    <td>Gilberto Simões</td>
+                                    <td>Dauton Félix</td>
+                                    <td id="btn-editar"><p>Editar</p></td>
+                                    <td id="btn-excluir"><p>Excluir</p></td>
                                 </tr>
-                                <?php endforeach ?>
-                            <!--__________________________________________________-->
+
                             </tbody>
                         </table>
-                        <p>Para mais dispositivos e informações pesquise na <a href="consulta.html">página de consulta.</a></p>
                     </section>
-
+                    
+                <button type="button" id="btn-excel" title="Extrair para Excel"><img src="img/logo-excel.png"></button>
+                
                 <footer class="conteudo-rodape">
                     <small>Inventário de Telefonia - ID DO BRASIL LOGISTICA LTDA - 2024</small>
                 </footer>

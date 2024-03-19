@@ -1,26 +1,13 @@
-<?php
-
-    require_once "php/conexao_bd.php";
-    require_once "php/src/Dispositivo.php";
-
-// EXIBE OS 10 ÚLTIMOS DISPOSITIVOS CADASTR5ADOS...
-    $dispositivo = new Dispositivo($mysql);
-    $dispositivos = $dispositivo->getUltimosCadastrados();
-//____________________________________________________
-
-?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Página inicial</title>
+    <title>Cadastro de usuário</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <meta name="desciption" content="Invenário de telefonia corporativa">
     <meta name="author" content="Dauton Pereira Félix - 2024">
-    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/novo_usuario.css'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@500&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
@@ -86,43 +73,72 @@
             </header>
             <article class="conteudo">
                 <header class="conteudo-cabecalho">
-                    <h3>INÍCIO</h3>
+                    <h3>ADMIN / CADASTRAR USUÁRIO</h3>
                     <div>
                         <i class="fa-solid fa-house-laptop"></i>
                         <i class="fa-solid fa-mobile-screen-button"></i>
                     </div>
                 </header>
                     <section class="conteudo-center">
-                        <h3>Últimos equipamentos adicionados</h3>
-                        <table>
-                            <thead>
-                                <td>Marca</td>
-                                <td>Modelo</td>
-                                <td>IMEI</td>
-                                <td>CDC</td>
-                                <td>Usuário</td>
-                                <td>Linha</td>
-                                <td>Ponto focal</td>
-                                <td>Data</td>
-                            </thead>
-                            <tbody>
-                            <!-- EXIBE OS 10 ÚLTIMOS DISPOSITIVOS CADASTR5ADOS... -->
-                                <?php foreach($dispositivos as $dispositivo) : ?>
-                                <tr>
-                                    <td><?= $dispositivo['marca'] ?></td>
-                                    <td><?= $dispositivo['modelo'] ?></td>
-                                    <td><?= $dispositivo['imei'] ?></td>
-                                    <td><?= $dispositivo['cdc'] ?></td>
-                                    <td><?= $dispositivo['nome_usuario'] ?></td>
-                                    <td><?= $dispositivo['linha'] ?></td>
-                                    <td><?= $dispositivo['nome_ponto_focal'] ?></td>
-                                    <td><?= $dispositivo['data_cadastro'] ?></td>
-                                </tr>
-                                <?php endforeach ?>
-                            <!--__________________________________________________-->
-                            </tbody>
-                        </table>
-                        <p>Para mais dispositivos e informações pesquise na <a href="consulta.html">página de consulta.</a></p>
+                        <h3>Cadastrar um usuário</h3>
+
+                        <form class="">
+                            <i class="fa-solid fa-user-plus"></i>
+                            <label><p>Nome completo</p>
+                                <input type="text" name="nome" id="nome" placeholder="Insira o nome completo" required>
+                            </label>
+                            <label><p>Usuário</p>
+                                <input type="text" name="usuario" id="usuario" placeholder="Insira o usuário" required>
+                            </label>
+                            <label><p>Unidade</p>
+                                <select>
+                                <option value="" selected>Selecione</option>
+                                    <option>AGHNKJU</option>
+                                    <option>AGICORJ</option>
+                                    <option>AGMWMJU</option>
+                                    <option>AGNIVJU</option>
+                                    <option>AGSHIJU</option>
+                                    <option>AGZARAJU</option>
+                                    <option>CDAMASBC</option>
+                                    <option>CDAMBEX</option>
+                                    <option>CDAMBSL</option>
+                                    <option>CDARCEX</option>
+                                    <option>CDBR</option>
+                                    <option>CDD</option>
+                                    <option>CDDIAEX</option>
+                                    <option>CDDNBR</option>
+                                    <option>CDDNPA</option>
+                                    <option>CDESLSE</option>
+                                    <option>CDHEIEX</option>
+                                    <option>CDJJNOD</option>
+                                    <option>CDNIVEX</option>
+                                    <option>CDDOCEX</option>
+                                    <option>CDPRIEX 2.0</option>
+                                    <option>CDPUIGES</option>
+                                    <option>CDYPEEX</option>
+                                    <option>CDWELEX</option>
+                                    <option>FBAMBCG</option>
+                                    <option>FBAMBJU</option>
+                                    <option>FBAMBLATABSL</option>
+                                    <option>FBAMBSL</option>
+                                    <option>FBDLNPC</option>
+                                    <option>FBDNPC</option>
+                                    <option>FBMERSP</option>
+                                    <option>FBUNISP</option>
+                                    <option>MATRIZ</option>
+                                    <option>PTFBR</option>
+                                    <option>PTFD</option>
+                                    
+                                 </select>
+                            </label>
+                            <label><p>Senha</p>
+                                <input type="password" name="senha" id="senha" placeholder="Insira a senha" autocomplete="new-password">
+                            </label>
+
+                            <button type="submit" id="btn-cad-user" name="btn-cad-user">Cadastrar</button>
+
+                        </form>
+                        
                     </section>
 
                 <footer class="conteudo-rodape">

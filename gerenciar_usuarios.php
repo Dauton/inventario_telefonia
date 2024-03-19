@@ -1,22 +1,9 @@
-<?php
-
-    require_once "php/conexao_bd.php";
-    require_once "php/src/Dispositivo.php";
-
-// EXIBE OS 10 ÚLTIMOS DISPOSITIVOS CADASTR5ADOS...
-    $dispositivo = new Dispositivo($mysql);
-    $dispositivos = $dispositivo->getUltimosCadastrados();
-//____________________________________________________
-
-?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Página inicial</title>
+    <title>Gerenciar Usuários</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <meta name="desciption" content="Invenário de telefonia corporativa">
     <meta name="author" content="Dauton Pereira Félix - 2024">
@@ -86,43 +73,32 @@
             </header>
             <article class="conteudo">
                 <header class="conteudo-cabecalho">
-                    <h3>INÍCIO</h3>
+                    <h3>ADMIN / GERENCIAR USUÁRIOS</h3>
                     <div>
                         <i class="fa-solid fa-house-laptop"></i>
                         <i class="fa-solid fa-mobile-screen-button"></i>
                     </div>
                 </header>
-                    <section class="conteudo-center">
-                        <h3>Últimos equipamentos adicionados</h3>
+                    <section class="conteudo-center" id="conteudo-center-consulta">
+                        <h3>Grenciamento de usuários</h3>
                         <table>
                             <thead>
-                                <td>Marca</td>
-                                <td>Modelo</td>
-                                <td>IMEI</td>
-                                <td>CDC</td>
+                                <td>Nome completo</td>
                                 <td>Usuário</td>
-                                <td>Linha</td>
-                                <td>Ponto focal</td>
-                                <td>Data</td>
+                                <td>Unidade</td>
+                                <td>Editar</td>
+                                <td>Excluir</td>
                             </thead>
                             <tbody>
-                            <!-- EXIBE OS 10 ÚLTIMOS DISPOSITIVOS CADASTR5ADOS... -->
-                                <?php foreach($dispositivos as $dispositivo) : ?>
                                 <tr>
-                                    <td><?= $dispositivo['marca'] ?></td>
-                                    <td><?= $dispositivo['modelo'] ?></td>
-                                    <td><?= $dispositivo['imei'] ?></td>
-                                    <td><?= $dispositivo['cdc'] ?></td>
-                                    <td><?= $dispositivo['nome_usuario'] ?></td>
-                                    <td><?= $dispositivo['linha'] ?></td>
-                                    <td><?= $dispositivo['nome_ponto_focal'] ?></td>
-                                    <td><?= $dispositivo['data_cadastro'] ?></td>
+                                    <td>Dauton Pereira Félix</td>
+                                    <td>dpfelix</td>
+                                    <td>CDARCEX</td>
+                                    <td id="btn-editar"><p>Editar</p></td>
+                                    <td id="btn-excluir"><p>Excluir</p></td>
                                 </tr>
-                                <?php endforeach ?>
-                            <!--__________________________________________________-->
                             </tbody>
                         </table>
-                        <p>Para mais dispositivos e informações pesquise na <a href="consulta.html">página de consulta.</a></p>
                     </section>
 
                 <footer class="conteudo-rodape">
