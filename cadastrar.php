@@ -12,7 +12,7 @@
             $_POST['linha'], $_POST['operadora'], $_POST['uf'],
             $_POST['servico'], $_POST['perfil'], $_POST['cdc'],
             $_POST['unidade'], $_POST['nome_usuario'], $_POST['mat_usuario'],
-            $_POST['email_usuario'], $_POST['nome_gestor'], $_POST['nome_ponto_focal'], $_POST['data_cadastro']
+            $_POST['email_usuario'], $_POST['nome_gestor'], $_POST['nome_ponto_focal']
         );
 
         header('Location: cadastrar.php');
@@ -115,28 +115,28 @@
                                 <input type="text" name="modelo" id="modelo" placeholder="Insira o modelo" required>
                             </label>
                             <label><p>IMEI</p>
-                                <input type="number" name="imei" id="imei" placeholder="Insira o IMEI" required>
+                                <input type="number" name="imei" id="imei" placeholder="Insira o IMEI">
                             </label>
                             <label><p>Linha</p>
-                                <input type="text" name="linha" id="linha" placeholder="Insira a linha" required>
+                                <input type="tel name="linha" id="linha" placeholder="Insira a linha">
                             </label>
                             <label><p>Operadora</p>
-                                <input type="text" name="operadora" id="operadora" placeholder="Insira a operadora" required>
+                                <input type="text" name="operadora" id="operadora" placeholder="Insira a operadora" >
                             </label>
                             <label><p>Estado UF<span style="color: #ff0000"> *</span></p>
                                 <input type="text" name="uf" id="uf" placeholder="Insira a UF" required>
                             </label>
                             <label><p>Serviço</p>
-                                <input type="text" name="servico" id="servico" placeholder="Insira o serviço" required>
+                                <input type="text" name="servico" id="servico" placeholder="Insira o serviço">
                             </label>
                             <label><p>Perfil</p>
-                                <input type="text" name="perfil" id="perfil" placeholder="Insira o perfil" required>
+                                <input type="text" name="perfil" id="perfil" placeholder="Insira o perfil">
                             </label>
                             <label><p>Centro de Custo<span style="color: #ff0000"> *</span></p>
                                 <input type="number" name="cdc" id="cdc" placeholder="Insira o CDC" required>
                             </label>
-                            <label><p>Unidade<span color="red"> *</span></p>
-                                <select name="unidade" id="unidade">
+                            <label><p>Unidade<span style="color: #ff0000"> *</span></p>
+                                <select name="unidade" id="unidade" required>
                                     <option value="" selected>Selecione</option>
                                     <option>AGHNKJU</option>
                                     <option>AGICORJ</option>
@@ -176,13 +176,13 @@
                                  </select>
                             </label>
                             <label><p>Nome Usuário</p>
-                                <input type="text" name="nome_usuario" id="nome_usuario" placeholder="Insira o usuário" required>
+                                <input type="text" name="nome_usuario" id="nome_usuario" placeholder="Insira o usuário">
                             </label>
                             <label><p>Mat Usuário</p>
-                                <input type="text" name="mat_usuario" id="mat_usuario" placeholder="Insira a matrícula do usuário" required>
+                                <input type="text" name="mat_usuario" id="mat_usuario" placeholder="Insira a matrícula do usuário">
                             </label>
                             <label><p>E-mail Usuário</p>
-                                <input type="text" name="email_usuario" id="email_usuario" placeholder="Insira o e-mail do usuário" required>
+                                <input type="text" name="email_usuario" id="email_usuario" placeholder="Insira o e-mail do usuário">
                             </label>
                             <label><p>Nome gestor<span style="color: #ff0000"> *</span></p>
                                 <input type="text" name="nome_gestor" id="nome_gestor" placeholder="Insira o gestor" required>

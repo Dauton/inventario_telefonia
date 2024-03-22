@@ -28,6 +28,10 @@ $("#btn-menu, #back-menu").click(function() {
     }
 });
 
+$("#btn-excluir").click(function() {
+    $("#quest-excluir").fadeToggle(200);
+})
+
 
 // TELA DE LOGIN
 

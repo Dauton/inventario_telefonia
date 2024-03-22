@@ -1,3 +1,14 @@
+<?php
+
+    require "php/conexao_bd.php";
+    require "php/src/Dispositivo.php";
+
+    $dispositivo = new Dispositivo($mysql);
+    $dispositivos = $dispositivo->getUltimosCadastrados();
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -112,26 +123,32 @@
                                 <td>Excluir</td>
                             </thead>
                             <tbody>
+                                <?php foreach($dispositivos as $dispositivo): ?>
                                 <tr>
-                                    <td>Samsung</td>
-                                    <td>Galaxy A03</td>
-                                    <td>1234567891234567</td>
-                                    <td>35999955678</td>
-                                    <td>VIVO</td>
-                                    <td>MG</td>
-                                    <td>Movel</td>
-                                    <td>VOZ ILIMITADO + 4GB</td>
-                                    <td>192003</td>
-                                    <td>CDARCEX</td>
-                                    <td>Dauton Félix</td>
-                                    <td>500838</td>
-                                    <td>dpfelix@id-logistics.com</td>
-                                    <td>Gilberto Simões</td>
-                                    <td>Dauton Félix</td>
-                                    <td id="btn-editar"><p>Editar</p></td>
-                                    <td id="btn-excluir"><p>Excluir</p></td>
+                                    <td><?= $dispositivo['marca'] ?></td>
+                                    <td><?= $dispositivo['modelo'] ?></td>
+                                    <td><?= $dispositivo['imei'] ?></td>
+                                    <td><?= $dispositivo['linha'] ?></td>
+                                    <td><?= $dispositivo['operadora'] ?></td>
+                                    <td><?= $dispositivo['uf'] ?></td>
+                                    <td><?= $dispositivo['servico'] ?></td>
+                                    <td><?= $dispositivo['perfil'] ?></td>
+                                    <td><?= $dispositivo['cdc'] ?></td>
+                                    <td><?= $dispositivo['unidade'] ?></td>
+                                    <td><?= $dispositivo['nome_usuario'] ?></td>
+                                    <td><?= $dispositivo['mat_usuario'] ?></td>
+                                    <td><?= $dispositivo['email_usuario'] ?></td>
+                                    <td><?= $dispositivo['nome_gestor'] ?></td>
+                                    <td><?= $dispositivo['nome_ponto_focal'] ?></td>
+                                    <td><button id="btn-editar">Editar</button></td>
+                                    <td>
+                                        <form method="post" action="php/excluir_dispositivo.php">
+                                            <input type="hidden" name="id" value="<?= $dispositivo['id'] ?>">
+                                            <button id="btn-excluir">Excluir</button>
+                                        </form>
+                                    </td>
                                 </tr>
-
+                                <?php endforeach ?>
                             </tbody>
                         </table>
                     </section>

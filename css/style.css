@@ -7,7 +7,7 @@
 }
 
 :root {
-    --primary-color: #0088ff;;
+    --primary-color: #0088ff;
     --secundary-color: #005876;
     --terciary-color:#00384b;
     --white-color: #f1f1f1;
@@ -168,16 +168,20 @@ body {
     font-weight: bold;
 }
 .conteudo-center td {
-    padding: 10px 5px;
+    padding: 5px;
     text-align: center;
     border-bottom: .1px solid #cdcdcd;
 }
+.conteudo-center td a {
+    text-decoration: none;
+}
 
-#conteudo-center-consulta table tr td p {
+#conteudo-center-consulta table tr td button {
     width: 50px;
     margin: 0 auto;
     padding: 5px 2px;
     border-radius: 3px;
+    border: none;
     background: #b3dcff;
     font-size: 8px;
     text-align: center;
@@ -185,9 +189,14 @@ body {
     font-weight: bold;
     cursor: pointer;
 }
-#conteudo-center-consulta table tr #btn-excluir p {
+#conteudo-center-consulta table tr #btn-excluir {
     background: #ffcccc;
     color: #850000;
+}
+#conteudo-center-consulta table td form {
+    width: fit-content;
+    padding: 0;
+    margin: 0;
 }
 
 .conteudo-center p {
@@ -207,7 +216,7 @@ body {
     border-radius: 5px;
     box-shadow: 0 0 .3em #cdcdcd;
 }
-.conteudo-center form .fa-circle-plus {
+.conteudo-center form .fa-circle-plus, .conteudo-center form .fa-square-pen {
     width: 100%;
     text-align: center;
     font-size: 25px;
@@ -254,6 +263,9 @@ input[type=number]::-webkit-inner-spin-button {
     font-size: 10px;
     cursor: pointer;
 }
+.conteudo-center form div #excluir {
+    background: #ff7171;
+}
 .conteudo-center form div button:focus {
     outline-color: var(--secundary-color);
 }
@@ -289,6 +301,15 @@ input[type=number]::-webkit-inner-spin-button {
 }
 #conteudo-center-consulta form div {
     margin-top: 5px;
+}
+#form-excluir {
+    width: fit-content;
+    padding: 0;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+#form-excluir button {
+    background: #ff3e3e;
 }
 
 #btn-excel {
@@ -427,19 +448,22 @@ input[type=number]::-webkit-inner-spin-button {
         text-align: left;
         font-size: 14px;
     }
-    .conteudo-center form div button {
-        width: 110px;
-        padding: 7px;
-        font-size: 15px;
-    }
     #conteudo-center-consulta {
         width: 100%;
     }
     #conteudo-center-consulta form input {
         width: 100%;
     }
-    #conteudo-center-consulta table tr td p {
+    #form-excluir button {
+        margin-top: -20px;
+    }
+    #conteudo-center-consulta table tr td button {
         width: 30px;
+        padding: 2px;
+        border-radius: 1px;
         font-size: 5px;
+    }
+    #btn-excel {
+        bottom: 35px;
     }
 }
