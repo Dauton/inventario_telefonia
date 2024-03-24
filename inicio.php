@@ -1,10 +1,12 @@
 <?php
 
-    require "php/conexao_bd.php";
-    require "php/src/Dispositivo.php";
+    require_once "php/conexao_bd.php";
+    require_once "php/src/Dispositivo.php";
 
+// EXIBE OS 10 ÚLTIMOS DISPOSITIVOS CADASTR5ADOS...
     $dispositivo = new Dispositivo($mysql);
     $dispositivos = $dispositivo->getUltimosCadastrados();
+//____________________________________________________
 
 ?>
 
@@ -14,7 +16,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Consulta de dispositivo</title>
+    <title>Página inicial</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <meta name="desciption" content="Invenário de telefonia corporativa">
     <meta name="author" content="Dauton Pereira Félix - 2024">
@@ -84,81 +86,45 @@
             </header>
             <article class="conteudo">
                 <header class="conteudo-cabecalho">
-                    <h3><a href="index.php">INÍCIO</a> / CONSULTAR</h3>
+                    <h3>INÍCIO</h3>
                     <div>
                         <i class="fa-solid fa-house-laptop"></i>
                         <i class="fa-solid fa-mobile-screen-button"></i>
                     </div>
                 </header>
-                    <section class="conteudo-center" id="conteudo-center-consulta">
-                        <h3>Consulta de Dispositivos</h3>
-
-                        <form>
-                            <label><p>Campo de busca</p>
-                                <input type="search" name="busca" id="busca" placeholder="Complete com alguma característica" required>
-                            </label>
-                            <div>
-                                <button type="submit">Buscar</button>
-                            </div>
-                            <p>O resultado será exibido abaixo</p>
-                        </form>
+                    <section class="conteudo-center">
+                        <h3>Últimos equipamentos adicionados</h3>
                         <table>
                             <thead>
                                 <td>Marca</td>
                                 <td>Modelo</td>
                                 <td>IMEI</td>
+                                <td>CDC</td>
+                                <td>Usuário</td>
                                 <td>Linha</td>
-                                <td>Operadora</td>
-                                <td>Estado UF</td>
-                                <td>Serviço</td>
-                                <td>Perfil</td>
-                                <td>Centro de Custo</td>
-                                <td>Unidade</td>
-                                <td>Nome Usuário</td>
-                                <td>Mat Usuário</td>
-                                <td>E-mail Usuário</td>
-                                <td>Nome Gestor</td>
-                                <td>Nome Ponto Focal</td>
-                                <td>Editar</td>
-                                <td>Excluir</td>
+                                <td>Ponto focal</td>
+                                <td>Data</td>
                             </thead>
                             <tbody>
-                                <?php foreach($dispositivos as $dispositivo): ?>
+                            <!-- EXIBE OS 10 ÚLTIMOS DISPOSITIVOS CADASTR5ADOS... -->
+                                <?php foreach($dispositivos as $dispositivo) : ?>
                                 <tr>
                                     <td><?= $dispositivo['marca'] ?></td>
                                     <td><?= $dispositivo['modelo'] ?></td>
                                     <td><?= $dispositivo['imei'] ?></td>
-                                    <td><?= $dispositivo['linha'] ?></td>
-                                    <td><?= $dispositivo['operadora'] ?></td>
-                                    <td><?= $dispositivo['uf'] ?></td>
-                                    <td><?= $dispositivo['servico'] ?></td>
-                                    <td><?= $dispositivo['perfil'] ?></td>
                                     <td><?= $dispositivo['cdc'] ?></td>
-                                    <td><?= $dispositivo['unidade'] ?></td>
                                     <td><?= $dispositivo['nome_usuario'] ?></td>
-                                    <td><?= $dispositivo['mat_usuario'] ?></td>
-                                    <td><?= $dispositivo['email_usuario'] ?></td>
-                                    <td><?= $dispositivo['nome_gestor'] ?></td>
+                                    <td><?= $dispositivo['linha'] ?></td>
                                     <td><?= $dispositivo['nome_ponto_focal'] ?></td>
-                                    <td>
-                                        <form>
-                                            <a href="php/editar_dispositivo.php?id=<?= $dispositivo['id'] ?>"><button type="button">Editar</button></a>
-                                        </form>
-                                    </td>
-                                    <td>
-                                        <form method="post" action="php/excluir_dispositivo.php">
-                                            <input type="hidden" name="id" value="<?= $dispositivo['id'] ?>">
-                                            <button id="btn-excluir">Excluir</button>
-                                        </form>
-                                    </td>
+                                    <td><?= $dispositivo['data_cadastro'] ?></td>
                                 </tr>
                                 <?php endforeach ?>
+                            <!--__________________________________________________-->
                             </tbody>
                         </table>
+                        <p>Para mais dispositivos e informações pesquise na <a href="consulta.html">página de consulta.</a></p>
                     </section>
-                    
-                <button type="button" id="btn-excel" title="Extrair para Excel"><img src="img/logo-excel.png"></button>
-                
+
                 <footer class="conteudo-rodape">
                     <small>Inventário de Telefonia - ID DO BRASIL LOGISTICA LTDA - 2024</small>
                 </footer>

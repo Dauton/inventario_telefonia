@@ -31,7 +31,7 @@
                 <div></div><div></div><div></div>
             </div>
             <ul>
-                <li><a href="index.php"><i class="fa-solid fa-house"></i>Início<i class="fa-solid fa-angle-right"></i></a></li>
+                <li><a href="inicio.php"><i class="fa-solid fa-house"></i>Início<i class="fa-solid fa-angle-right"></i></a></li>
                 
                 <li id="menu_02"><a><i class="fa-solid fa-mobile-screen"></i>Dispositivos<i class="fa-solid fa-angle-down"></i></a>
                     <ul id="menusub_02">
@@ -73,7 +73,7 @@
             </header>
             <article class="conteudo">
                 <header class="conteudo-cabecalho">
-                    <h3>ADMIN / GERENCIAR USUÁRIOS</h3>
+                    <h3><a href="inicio.php">INÍCIO</a> / GERENCIAR USUÁRIOS</h3>
                     <div>
                         <i class="fa-solid fa-house-laptop"></i>
                         <i class="fa-solid fa-mobile-screen-button"></i>

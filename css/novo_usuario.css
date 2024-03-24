@@ -139,6 +139,10 @@ body {
 }
 .conteudo-cabecalho h3 {
     font-size: 13px;
+    font-weight: bold;
+}
+.conteudo-cabecalho a {
+    color: var(--white-color);
     font-weight: 300;
 }
 .conteudo-center {
@@ -179,6 +183,7 @@ body {
 }
 .conteudo-center form .fa-user-plus {
     width: 100%;
+    margin-bottom: 10px;
     text-align: center;
     font-size: 25px;
     color: var(--secundary-color);
@@ -191,14 +196,14 @@ body {
 }
 .conteudo-center form input, .conteudo-center form select {
     width: 100%;
-    padding: 5px;
+    padding: 7px 5PX;
     font-size: 10px;
-    border: 1px solid #808080;
-    border-radius: 2px;
-    background: #ffffff;
+    box-shadow: 0 0 .2em #9e9e9e;
+    border: none;
+    border-radius: 3px;
 }
 .conteudo-center form select {
-    padding: 5px 0;
+    padding: 7px 1px;
 }
 
 .conteudo-center form input:focus, .conteudo-center form select:focus {
@@ -217,7 +222,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 .conteudo-center form button {
     width: 80px;
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 5px;
     background: var(--primary-color);
     color: var(--white-color);
@@ -323,5 +328,26 @@ input[type=number]::-webkit-inner-spin-button {
     }
     .conteudo-cabecalho .fa-mobile-screen-button {
         background: #ffa500;
+    }
+    .conteudo-center {
+        width: 100%;
+    }
+    .conteudo-center form {
+        width: 90%;
+        max-width: 300px;
+    }
+    .conteudo-center form input, .conteudo-center form select {
+        width: 100%;
+        background: #ffffff;
+        padding: 12px 8px;
+        box-shadow: 0 0 .2em #9e9e9e;
+        border: none;
+        border-radius: 5px;
+        font-size: 13px;
+    }
+    .conteudo-center form #btn-cad-user {
+        width: 100px;
+        padding: 8px;
+        font-size: 12px;
     }
 }

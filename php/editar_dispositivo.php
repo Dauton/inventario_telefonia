@@ -1,41 +1,26 @@
 <?php
 
-    require "php/conexao_bd.php";
-    require "php/src/Dispositivo.php";
+    require "conexao_bd.php";
+    require "src/Dispositivo.php";
 
 
 // CADASTRA DISPOSITIVO...
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
         $dispositivo = NEW Dispositivo($mysql);
-        $dispositivo->cadastraDispositivo(
-            $_POST['marca'], $_POST['modelo'], $_POST['imei'],
+        $dispositivo->editaDispositivo(
+            $_POST['id'], $_POST['marca'], $_POST['modelo'], $_POST['imei'],
             $_POST['linha'], $_POST['operadora'], $_POST['uf'],
             $_POST['servico'], $_POST['perfil'], $_POST['cdc'],
             $_POST['unidade'], $_POST['nome_usuario'], $_POST['mat_usuario'],
             $_POST['email_usuario'], $_POST['nome_gestor'], $_POST['nome_ponto_focal']
         );
 
-        header('Refresh: 1 cadastrar.php');
-        echo "<div class='back'><img src='img/confirmacao.png' id='confirmacao'><h3>CADASTRADO COM SUCESSO!</h3></div> </div>";
-        echo "<style>
-                    .back {
-                        width: 100%;
-                        height: 100%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        flex-direction: column;
-                        font-family: 'Playpen Sans', cursive;
-                        font-family: 'Ubuntu', sans-serif;
-                    }
-                    #confirmacao {
-                        width: 60px;
-                        height: 60px;
-                    }
-
-              </style>";
+        header('Location: ../consulta.php');
         die();
     }
+
+    $dispositivo = new Dispositivo($mysql);
+    $disp = $dispositivo->buscaId($_GET['id']);
 //_________________________________________________
 
 ?>
@@ -49,7 +34,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <meta name="desciption" content="Invenário de telefonia corporativa">
     <meta name="author" content="Dauton Pereira Félix - 2024">
-    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/style.css'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@500&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
@@ -73,24 +58,24 @@
                 <div></div><div></div><div></div>
             </div>
             <ul>
-                <li><a href="inicio.php"><i class="fa-solid fa-house"></i>Início<i class="fa-solid fa-angle-right"></i></a></li>
+                <li><a href="../inicio.php"><i class="fa-solid fa-house"></i>Início<i class="fa-solid fa-angle-right"></i></a></li>
                 
                 <li id="menu_02"><a><i class="fa-solid fa-mobile-screen"></i>Dispositivos<i class="fa-solid fa-angle-down"></i></a>
                     <ul id="menusub_02">
-                        <li><a href="cadastrar.php"><i class="fa-solid fa-arrow-pointer"></i>Cadastrar<i class="fa-solid fa-angle-right"></i></a></li>
-                        <li><a href="consulta.php"><i class="fa-solid fa-arrow-pointer"></i>Consultar<i class="fa-solid fa-angle-right"></i></a></li>
+                        <li><a href="../cadastrar.php"><i class="fa-solid fa-arrow-pointer"></i>Cadastrar<i class="fa-solid fa-angle-right"></i></a></li>
+                        <li><a href="../consulta.php"><i class="fa-solid fa-arrow-pointer"></i>Consultar<i class="fa-solid fa-angle-right"></i></a></li>
                     </ul>
                 </li>
                 
                 <li id="menu_03"><a><i class="fa-solid fa-gear"></i>Admin<i class="fa-solid fa-angle-down"></i></a>
                     <ul id="menusub_03">
-                        <li><a href="novo_usuario.php"><i class="fa-solid fa-arrow-pointer"></i>Cadastrar usuário<i class="fa-solid fa-angle-right"></i></a></li>
-                        <li><a href="gerenciar_usuarios.php"><i class="fa-solid fa-arrow-pointer"></i>Gerenciar usuários<i class="fa-solid fa-angle-right"></i></a></li>
+                        <li><a href="../novo_usuario.php"><i class="fa-solid fa-arrow-pointer"></i>Cadastrar usuário<i class="fa-solid fa-angle-right"></i></a></li>
+                        <li><a href="../gerenciar_usuarios.php"><i class="fa-solid fa-arrow-pointer"></i>Gerenciar usuários<i class="fa-solid fa-angle-right"></i></a></li>
                     </ul>
                 </li>
             </ul>
 
-            <img src="img/id-logo-branco-extenso.png" class="menu-logo-id">
+            <img src="../img/id-logo-branco-extenso.png" class="menu-logo-id">
         </nav>
         <section class="principal">
             <header class="cabecalho">
@@ -110,52 +95,52 @@
                         </span>
                     </div></a>
                 </div>
-                <img src="img/sistema-logo.png">
+                <img src="../img/sistema-logo.png">
                 <i class="fa-solid fa-bars" id="btn-menu"></i>
             </header>
             <article class="conteudo">
                 <header class="conteudo-cabecalho">
-                    <h3><a href="inicio.php">INÍCIO</a> / CADASTRAR</h3>
+                    <h3><a href="../inicio.php">INÍCIO</a> / <a href="../consulta.php">CONSULTAR</a> / EDITAR</h3>
                     <div>
                         <i class="fa-solid fa-house-laptop"></i>
                         <i class="fa-solid fa-mobile-screen-button"></i>
                     </div>
                 </header>
                     <section class="conteudo-center">
-                        <h3>Cadastrar um dispositivo</h3>
+                        <h3>Editar dispositivo</h3>
 
-                        <form class="" action="cadastrar.php" method="post">
-                            <i class="fa-solid fa-circle-plus"></i>
+                        <form action="" method="post">
+                            <i class="fa-solid fa-square-pen"></i>
                             <label><p>Marca<span style="color: #ff0000"> *</span></p>
-                                <input type="text" name="marca" id="marca" placeholder="Insira a marca" required>
+                                <input type="text" name="marca" id="marca" placeholder="Insira a marca" value="<?= htmlentities($disp['marca']) ?>" required>
                             </label>
                             <label><p>Modelo<span style="color: #ff0000"> *</span></p>
-                                <input type="text" name="modelo" id="modelo" placeholder="Insira o modelo" required>
+                                <input type="text" name="modelo" id="modelo" placeholder="Insira o modelo" value="<?= htmlentities($disp['modelo']) ?>" required>
                             </label>
                             <label><p>IMEI</p>
-                                <input type="number" name="imei" id="imei" placeholder="Insira o IMEI">
+                                <input type="number" name="imei" id="imei" placeholder="Insira o IMEI" value="<?= htmlentities($disp['imei']) ?>">
                             </label>
                             <label><p>Linha</p>
-                                <input type="tel" name="linha" id="linha" placeholder="Insira a linha">
+                                <input type="tel" name="linha" id="linha" placeholder="Insira a linha" value="<?= htmlentities($disp['linha']) ?>">
                             </label>
                             <label><p>Operadora</p>
-                                <input type="text" name="operadora" id="operadora" placeholder="Insira a operadora" >
+                                <input type="text" name="operadora" id="operadora" placeholder="Insira a operadora" value="<?= htmlentities($disp['operadora']) ?>">
                             </label>
                             <label><p>Estado UF<span style="color: #ff0000"> *</span></p>
-                                <input type="text" name="uf" id="uf" placeholder="Insira a UF" required>
+                                <input type="text" name="uf" id="uf" placeholder="Insira a UF" value="<?= htmlentities($disp['uf']) ?>" required>
                             </label>
                             <label><p>Serviço</p>
-                                <input type="text" name="servico" id="servico" placeholder="Insira o serviço">
+                                <input type="text" name="servico" id="servico" placeholder="Insira o serviço" value="<?= htmlentities($disp['servico']) ?>">
                             </label>
                             <label><p>Perfil</p>
-                                <input type="text" name="perfil" id="perfil" placeholder="Insira o perfil">
+                                <input type="text" name="perfil" id="perfil" placeholder="Insira o perfil" value="<?= htmlentities($disp['perfil']) ?>">
                             </label>
                             <label><p>Centro de Custo<span style="color: #ff0000"> *</span></p>
-                                <input type="number" name="cdc" id="cdc" placeholder="Insira o CDC" required>
+                                <input type="number" name="cdc" id="cdc" placeholder="Insira o CDC" value="<?= htmlentities($disp['cdc']) ?>" required>
                             </label>
                             <label><p>Unidade<span style="color: #ff0000"> *</span></p>
                                 <select name="unidade" id="unidade" required>
-                                    <option value="" selected>Selecione</option>
+                                    <option value="" selected ><?= htmlentities($disp['unidade']) ?></option>
                                     <option>AGHNKJU</option>
                                     <option>AGICORJ</option>
                                     <option>AGMWMJU</option>
@@ -194,24 +179,24 @@
                                  </select>
                             </label>
                             <label><p>Nome Usuário</p>
-                                <input type="text" name="nome_usuario" id="nome_usuario" placeholder="Insira o usuário">
+                                <input type="text" name="nome_usuario" id="nome_usuario" placeholder="Insira o usuário" value="<?= htmlentities($disp['nome_usuario']) ?>">
                             </label>
                             <label><p>Mat Usuário</p>
-                                <input type="text" name="mat_usuario" id="mat_usuario" placeholder="Insira a matrícula do usuário">
+                                <input type="text" name="mat_usuario" id="mat_usuario" placeholder="Insira a matrícula do usuário" value="<?= htmlentities($disp['mat_usuario']) ?>">
                             </label>
                             <label><p>E-mail Usuário</p>
-                                <input type="text" name="email_usuario" id="email_usuario" placeholder="Insira o e-mail do usuário">
+                                <input type="text" name="email_usuario" id="email_usuario" placeholder="Insira o e-mail do usuário" value="<?= htmlentities($disp['email_usuario']) ?>">
                             </label>
                             <label><p>Nome gestor<span style="color: #ff0000"> *</span></p>
-                                <input type="text" name="nome_gestor" id="nome_gestor" placeholder="Insira o gestor" required>
+                                <input type="text" name="nome_gestor" id="nome_gestor" placeholder="Insira o gestor" value="<?= htmlentities($disp['nome_gestor']) ?>" required>
                             </label>
                             <label><p>Nome Ponto Focal<span style="color: #ff0000"> *</span></p>
-                                <input type="text" name="nome_ponto_focal" id="nome_ponto_focal" placeholder="Insira o ponto focal" required>
+                                <input type="text" name="nome_ponto_focal" id="nome_ponto_focal" placeholder="Insira o ponto focal" value="<?= htmlentities($disp['nome_ponto_focal']) ?>" required>
                             </label>
-                            <input type="text" name="data_cadastro" id="data_cadastro" hidden>
+                            <input type="hidden" name="id" id="id" value="<?= htmlentities($disp['id']) ?>">
                             <div>
-                                <button type="reset" id="resetar">Resetar</button>
-                                <button type="submit" id="cadastrar">Cadastrar</button>
+                                <a href="../consulta.php"><button type="buttton" id="cancelar">Cancelar</button></a>
+                                <button type="submit" id="editar">Editar</button>
                             </div>
                         </form>
                         
@@ -224,8 +209,8 @@
         </section>
     </main>
 
-    <script src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/javascript.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/javascript.js"></script>
 
 </body>
 </html>

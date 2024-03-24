@@ -21,11 +21,11 @@ class Dispositivo
 
 // CADASTRA DISPOSITIVO...
     public function cadastraDispositivo(
-        $marca, $modelo, $imei, $linha, $operadora, 
-        $uf, $servico, $perfil, $cdc, $unidade, 
-        $nome_usuario, $mat_usuario, $email_usuario,
-        $nome_gestor, $nome_ponto_focal
-    )
+        string $marca, string $modelo, string $imei, string $linha, string $operadora, 
+        string $uf, string $servico, string $perfil, string $cdc, string $unidade, 
+        string $nome_usuario, string $mat_usuario, string $email_usuario,
+        string $nome_gestor, string $nome_ponto_focal
+    ): void
     {
         $addDispositivo = $this->mysql->prepare(
             "INSERT INTO tb_dispositivos (marca, modelo, imei, linha, operadora, uf, servico, perfil, cdc, unidade, nome_usuario, mat_usuario, email_usuario, nome_gestor, nome_ponto_focal, data_cadastro) 
@@ -46,4 +46,28 @@ class Dispositivo
         $excluiDispositivo->execute();
     }
 //_________________________________________________
+
+    public function buscaId(string $id): array
+    {
+        $selecionaDispositivo = $this->mysql->prepare("SELECT id, marca, modelo, imei, linha, operadora, uf, servico, perfil, cdc, unidade, nome_usuario, mat_usuario, email_usuario, nome_gestor, nome_ponto_focal FROM tb_dispositivos WHERE id = ?");
+        $selecionaDispositivo->bind_param('s', $id);
+        $selecionaDispositivo->execute();
+        $dispositivo = $selecionaDispositivo->get_result()->fetch_assoc();
+        return $dispositivo;
+    }
+
+    public function editaDispositivo(
+        string $id, string $marca, string $modelo, string $imei, string $linha, string $operadora, 
+        string $uf, string $servico, string $perfil, string $cdc, string $unidade, 
+        string $nome_usuario, string $mat_usuario, string $email_usuario,
+        string $nome_gestor, string $nome_ponto_focal
+    ): void
+    {
+        $editaDispositivo = $this->mysql->prepare(
+        "UPDATE tb_dispositivos
+         SET marca = ?, modelo = ?, imei = ?, linha = ?, operadora = ?, uf = ?, servico = ?, perfil = ?, cdc = ?, unidade = ?, nome_usuario = ?, mat_usuario = ?, email_usuario = ?, nome_gestor = ?, nome_ponto_focal = ?
+         WHERE id = ?");
+        $editaDispositivo->bind_param('ssssssssssssssss',$marca, $modelo, $imei, $linha, $operadora, $uf, $servico, $perfil, $cdc, $unidade, $nome_usuario, $mat_usuario, $email_usuario, $nome_gestor, $nome_ponto_focal, $id);
+        $editaDispositivo->execute();
+    }
 }

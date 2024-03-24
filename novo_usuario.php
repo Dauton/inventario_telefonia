@@ -31,7 +31,7 @@
                 <div></div><div></div><div></div>
             </div>
             <ul>
-                <li><a href="index.php"><i class="fa-solid fa-house"></i>Início<i class="fa-solid fa-angle-right"></i></a></li>
+                <li><a href="inicio.php"><i class="fa-solid fa-house"></i>Início<i class="fa-solid fa-angle-right"></i></a></li>
                 
                 <li id="menu_02"><a><i class="fa-solid fa-mobile-screen"></i>Dispositivos<i class="fa-solid fa-angle-down"></i></a>
                     <ul id="menusub_02">
@@ -73,7 +73,7 @@
             </header>
             <article class="conteudo">
                 <header class="conteudo-cabecalho">
-                    <h3>ADMIN / CADASTRAR USUÁRIO</h3>
+                    <h3><a href="inicio.php">INÍCIO</a> / CADASTRAR USUÁRIO</h3>
                     <div>
                         <i class="fa-solid fa-house-laptop"></i>
                         <i class="fa-solid fa-mobile-screen-button"></i>
@@ -84,15 +84,15 @@
 
                         <form class="">
                             <i class="fa-solid fa-user-plus"></i>
-                            <label><p>Nome completo</p>
+                            <label><p>Nome completo<span style="color: #ff0000"> *</span></p>
                                 <input type="text" name="nome" id="nome" placeholder="Insira o nome completo" required>
                             </label>
-                            <label><p>Usuário</p>
+                            <label><p>Usuário<span style="color: #ff0000"> *</span></p>
                                 <input type="text" name="usuario" id="usuario" placeholder="Insira o usuário" required>
                             </label>
-                            <label><p>Unidade</p>
-                                <select>
-                                <option value="" selected>Selecione</option>
+                            <label><p>Unidade<span style="color: #ff0000"> *</span></p>
+                                <select required>
+                                <option value="" disabled selected hidden>Selecione a unidade</option>
                                     <option>AGHNKJU</option>
                                     <option>AGICORJ</option>
                                     <option>AGMWMJU</option>
@@ -131,8 +131,8 @@
                                     
                                  </select>
                             </label>
-                            <label><p>Senha</p>
-                                <input type="password" name="senha" id="senha" placeholder="Insira a senha" autocomplete="new-password">
+                            <label><p>Senha<span style="color: #ff0000"> *</span></p>
+                                <input type="password" name="senha" id="senha" placeholder="Insira a senha" autocomplete="new-password" required>
                             </label>
 
                             <button type="submit" id="btn-cad-user" name="btn-cad-user">Cadastrar</button>
