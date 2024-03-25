@@ -140,7 +140,7 @@
                             </label>
                             <label><p>Unidade<span style="color: #ff0000"> *</span></p>
                                 <select name="unidade" id="unidade" required>
-                                    <option value="" selected ><?= htmlentities($disp['unidade']) ?></option>
+                                    <option value="<?= htmlentities($disp['unidade']) ?>" selected ><?= htmlentities($disp['unidade']) ?></option>
                                     <option>AGHNKJU</option>
                                     <option>AGICORJ</option>
                                     <option>AGMWMJU</option>
@@ -193,9 +193,9 @@
                             <label><p>Nome Ponto Focal<span style="color: #ff0000"> *</span></p>
                                 <input type="text" name="nome_ponto_focal" id="nome_ponto_focal" placeholder="Insira o ponto focal" value="<?= htmlentities($disp['nome_ponto_focal']) ?>" required>
                             </label>
-                            <input type="hidden" name="id" id="id" value="<?= htmlentities($disp['id']) ?>">
                             <div>
-                                <a href="../consulta.php"><button type="buttton" id="cancelar">Cancelar</button></a>
+                                <input type="hidden" name="id" id="id" value="<?= htmlentities($disp['id']) ?>">
+                                <a href="../consulta.php" id="btn-cancelar-edicao">Cancelar</a>
                                 <button type="submit" id="editar">Editar</button>
                             </div>
                         </form>

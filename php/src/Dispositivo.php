@@ -47,6 +47,9 @@ class Dispositivo
     }
 //_________________________________________________
 
+
+// BUSCAR ID PARA EDIÇÃO DE UM DISPOSITIVO...
+
     public function buscaId(string $id): array
     {
         $selecionaDispositivo = $this->mysql->prepare("SELECT id, marca, modelo, imei, linha, operadora, uf, servico, perfil, cdc, unidade, nome_usuario, mat_usuario, email_usuario, nome_gestor, nome_ponto_focal FROM tb_dispositivos WHERE id = ?");
@@ -55,7 +58,10 @@ class Dispositivo
         $dispositivo = $selecionaDispositivo->get_result()->fetch_assoc();
         return $dispositivo;
     }
+//_________________________________________________
 
+
+// EDITA DISPOSITIVO
     public function editaDispositivo(
         string $id, string $marca, string $modelo, string $imei, string $linha, string $operadora, 
         string $uf, string $servico, string $perfil, string $cdc, string $unidade, 
@@ -71,3 +77,4 @@ class Dispositivo
         $editaDispositivo->execute();
     }
 }
+//________________________________________________

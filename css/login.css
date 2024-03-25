@@ -7,12 +7,14 @@
 }
 
 :root {
-    --primary-color: #0088ff;;
+    --primary-color: #0088ff;
+    ;
     --secundary-color: #005876;
-    --terciary-color:#00384b;
+    --terciary-color: #00384b;
     --white-color: #f1f1f1;
     --primary-shadow: 0 0 .5em #808080
 }
+
 body {
     font-family: 'Playpen Sans', cursive;
     font-family: 'Ubuntu', sans-serif;
@@ -27,20 +29,24 @@ body {
     justify-content: center;
     background: var(--white-color);
 }
+
 .center {
     width: 600px;
     display: flex;
     font-size: 13px;
-    box-shadow: .2em .2em 1em #cdcdcd ;
+    box-shadow: .2em .2em 1em #cdcdcd;
 }
+
 .center h1 {
     font-size: 20px;
 }
+
 .center h2 {
     font-size: 15px;
 }
 
-.center form, .left-form {
+.center form,
+.left-form {
     width: 50%;
     height: 100%;
     padding: 40px 20px;
@@ -58,21 +64,26 @@ body {
     background: url(../img/background-left-form.jpg);
     background-size: 100% 100%;
 }
+
 .left-form img {
     width: 130px;
     margin-top: auto;
 }
+
 .center form img {
     width: 130px;
     margin-bottom: 20px;
 }
+
 .center form label {
     width: 80%;
 }
+
 .center form label p {
     text-align: left;
     margin-bottom: 3px;
 }
+
 .center form label div {
     width: 100%;
     margin-bottom: 10px;
@@ -80,6 +91,7 @@ body {
     border-radius: 5px;
     overflow: hidden;
 }
+
 .center form i {
     padding: 10px;
     display: flex;
@@ -88,6 +100,7 @@ body {
     font-size: 12px;
     color: var(--white-color);
 }
+
 .center form input {
     width: 100%;
     padding: 5px;
@@ -95,19 +108,24 @@ body {
     background: #eaf5ff;
     border-radius: 0 5px 5px 0;
 }
+
 .center form input:focus {
     outline: none;
 }
+
 .center form div {
     position: relative;
 }
-.center form div .fa-eye, .center form div .fa-eye-slash {
+
+.center form div .fa-eye,
+.center form div .fa-eye-slash {
     background: transparent;
     color: var(--primary-color);
     position: absolute;
     right: 0;
     cursor: pointer;
 }
+
 .center form button {
     width: 80%;
     margin: 15px 0;
@@ -115,11 +133,14 @@ body {
     background: var(--primary-color);
     border: none;
     border-radius: 5px;
-    color: var(--white-color)
+    color: var(--white-color);
+    cursor: pointer;
 }
+
 .center form p {
     text-align: center;
 }
+
 .rodape {
     position: fixed;
     bottom: 10px;
@@ -138,27 +159,34 @@ body {
         width: 80px;
         margin-top: 20px;
     }
+
     .principal {
         align-items: baseline;
         padding: 50px 0 0 0;
     }
+
     .left-form img {
         display: none;
     }
+
     .center {
         width: 85%;
         max-width: 400px;
         flex-direction: column;
         border-radius: 10px;
     }
-    .left-form, .center form {
+
+    .left-form,
+    .center form {
         width: 100%;
         padding: 10px;
     }
+
     .left-form {
         padding: 20px;
         border-radius: 5px 5px 0 0;
     }
+
     .center form {
         padding-top: 30px;
         border-radius: 0 0 5px 5px;

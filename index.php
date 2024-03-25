@@ -23,7 +23,7 @@
                     <p>Entre com seu usuário e senha e tenha acesso ao sistema de inventário de telefonia!</p>
                     <img src="img/id-logo-branco-extenso.png">
                 </article>
-                <form>
+                <form method="post">
                     <img src="img/sistema-logo.png">
                     <label><p>Usuário</p>
                         <div>

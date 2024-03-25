@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -14,6 +15,7 @@
     <script src="https://kit.fontawesome.com/d8ed80570b.js" crossorigin="anonymous"></script>
 
 </head>
+
 <body>
     <main class="corpo">
         <div id="back-menu"></div>
@@ -23,23 +25,25 @@
                     <i class="fa-solid fa-circle-user"></i>
                     <h3>Bem-vindo(a)!</h3>
                     <p>Dauton Félix</p>
-                <span>
-                <button type="button" id="btn-sair">Sair</button>
+                    <span>
+                        <button type="button" id="btn-sair">Sair</button>
             </div>
 
             <div class="menu-divisoria">
-                <div></div><div></div><div></div>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
             <ul>
                 <li><a href="inicio.php"><i class="fa-solid fa-house"></i>Início<i class="fa-solid fa-angle-right"></i></a></li>
-                
+
                 <li id="menu_02"><a><i class="fa-solid fa-mobile-screen"></i>Dispositivos<i class="fa-solid fa-angle-down"></i></a>
                     <ul id="menusub_02">
                         <li><a href="cadastrar.php"><i class="fa-solid fa-arrow-pointer"></i>Cadastrar<i class="fa-solid fa-angle-right"></i></a></li>
                         <li><a href="consulta.php"><i class="fa-solid fa-arrow-pointer"></i>Consultar<i class="fa-solid fa-angle-right"></i></a></li>
                     </ul>
                 </li>
-                
+
                 <li id="menu_03"><a><i class="fa-solid fa-gear"></i>Admin<i class="fa-solid fa-angle-down"></i></a>
                     <ul id="menusub_03">
                         <li><a href="novo_usuario.php"><i class="fa-solid fa-arrow-pointer"></i>Cadastrar usuário<i class="fa-solid fa-angle-right"></i></a></li>
@@ -53,20 +57,24 @@
         <section class="principal">
             <header class="cabecalho">
                 <div>
-                    <a href="#"><div id="cabecalho-my-cdc">
-                        <i class="fa-solid fa-house-laptop"></i>
-                        <span>
-                            <p>Exibir dispositivos do</p>
-                            <h3>Meu Centro de Custo</h3>
-                        </span>
-                    </div></a>
-                    <a href="#"><div id="cabecalho-my-device">
-                        <i class="fa-solid fa-mobile-screen-button"></i>
-                        <span>
-                            <p>Exibir o</p>
-                            <h3>Meu Dispositivo</h3>
-                        </span>
-                    </div></a>
+                    <a href="#">
+                        <div id="cabecalho-my-cdc">
+                            <i class="fa-solid fa-house-laptop"></i>
+                            <span>
+                                <p>Exibir dispositivos do</p>
+                                <h3>Meu Centro de Custo</h3>
+                            </span>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div id="cabecalho-my-device">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                            <span>
+                                <p>Exibir o</p>
+                                <h3>Meu Dispositivo</h3>
+                            </span>
+                        </div>
+                    </a>
                 </div>
                 <img src="img/sistema-logo.png">
                 <i class="fa-solid fa-bars" id="btn-menu"></i>
@@ -79,27 +87,31 @@
                         <i class="fa-solid fa-mobile-screen-button"></i>
                     </div>
                 </header>
-                    <section class="conteudo-center" id="conteudo-center-consulta">
-                        <h3>Grenciamento de usuários</h3>
-                        <table>
-                            <thead>
-                                <td>Nome completo</td>
-                                <td>Usuário</td>
-                                <td>Unidade</td>
-                                <td>Editar</td>
-                                <td>Excluir</td>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Dauton Pereira Félix</td>
-                                    <td>dpfelix</td>
-                                    <td>CDARCEX</td>
-                                    <td id="btn-editar"><p>Editar</p></td>
-                                    <td id="btn-excluir"><p>Excluir</p></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </section>
+                <section class="conteudo-center" id="conteudo-center-consulta">
+                    <h3>Grenciamento de usuários</h3>
+                    <table>
+                        <thead>
+                            <td>Nome completo</td>
+                            <td>Usuário</td>
+                            <td>Unidade</td>
+                            <td>Editar</td>
+                            <td>Excluir</td>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dauton Pereira Félix</td>
+                                <td>dpfelix</td>
+                                <td>CDARCEX</td>
+                                <td id="btn-editar">
+                                    <p>Editar</p>
+                                </td>
+                                <td id="btn-excluir">
+                                    <p>Excluir</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
 
                 <footer class="conteudo-rodape">
                     <small>Inventário de Telefonia - ID DO BRASIL LOGISTICA LTDA - 2024</small>
@@ -112,4 +124,5 @@
     <script type="text/javascript" src="js/javascript.js"></script>
 
 </body>
+
 </html>

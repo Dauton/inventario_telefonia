@@ -13,9 +13,11 @@
     overflow: scroll;
     z-index: 2;
 }
+
 .menu::-webkit-scrollbar {
     display: none;
 }
+
 .menu-user-info {
     min-width: 100%;
     display: flex;
@@ -27,15 +29,19 @@
     font-size: 12px;
     color: var(--terciary-color);
 }
+
 .menu-user-info i {
     font-size: 25px;
     margin-bottom: 5px;
 }
+
 .menu-user-info div {
     width: 100%;
 }
+
 #btn-sair {
-    margin-top: 10px;;
+    margin-top: 10px;
+    ;
     padding: 5px 10px;
     border: none;
     background: var(--terciary-color);
@@ -46,11 +52,13 @@
     font-weight: bold;
     cursor: pointer;
 }
+
 .menu-divisoria {
     padding: 15px;
     display: flex;
     justify-content: center;
 }
+
 .menu-divisoria div {
     width: 4px;
     height: 4px;
@@ -58,6 +66,7 @@
     border-radius: 50px;
     background: var(--secundary-color);
 }
+
 .menu ul {
     min-width: 100%;
     list-style: none;
@@ -79,69 +88,84 @@
     cursor: pointer;
     transition: background .2s;
 }
+
 .menu li a:hover {
     background: var(--terciary-color);
     transition: background .2s;
 }
+
 .menu li i {
     width: 15px;
     text-align: center;
 }
-.menu .fa-angle-down, .menu .fa-angle-right, .menu .fa-arrow-pointer{
+
+.menu .fa-angle-down,
+.menu .fa-angle-right,
+.menu .fa-arrow-pointer {
     font-size: 9px;
 }
+
 .menu li ul {
     display: none;
     margin-bottom: 15px;
 }
+
 .menu li ul li a {
     background: var(--terciary-color);
 }
+
 .menu li ul li a:hover {
     background: #001c25;
     transition: background .2s;
 }
+
 .menu-logo-id {
     width: 100px;
     margin: auto 0 10px 0;
 }
 
-#btn-menu, #back-menu {
+#btn-menu,
+#back-menu {
     display: none;
 }
 
-@media screen and (max-width: 720px)
-{
+@media screen and (max-width: 720px) {
     #btn-menu {
         display: block;
-    }   
+    }
+
     #btn-menu {
         cursor: pointer;
         color: var(--terciary-color);
         z-index: 2;
     }
+
     #back-menu {
         width: 100%;
         height: 100%;
         top: 0;
         left: 0;
         position: fixed;
-        background: rgba(0,0,0,.7);
+        background: rgba(0, 0, 0, .7);
         z-index: 2;
     }
-    .menu  {
+
+    .menu {
         width: 260px;
         position: fixed;
         top: 0;
         border-radius: 0;
         left: -260px;
     }
+
     .menu-user-info {
         font-size: 15px;
     }
+
     .menu-user-info #btn-sair {
         font-size: 13px;
     }
+
     .menu ul li a {
         font-size: 14px;
     }

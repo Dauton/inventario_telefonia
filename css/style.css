@@ -9,10 +9,11 @@
 :root {
     --primary-color: #0088ff;
     --secundary-color: #005876;
-    --terciary-color:#00384b;
+    --terciary-color: #00384b;
     --white-color: #f1f1f1;
     --primary-shadow: 0 0 .5em #808080
 }
+
 body {
     font-family: 'Playpen Sans', cursive;
     font-family: 'Ubuntu', sans-serif;
@@ -56,17 +57,21 @@ body {
     align-items: center;
     justify-content: space-between;
 }
+
 .cabecalho img {
     width: 120px;
     margin-right: 20px;
 }
+
 .cabecalho a {
     text-decoration: none;
 }
+
 .cabecalho div {
     display: flex;
     gap: 10px;
 }
+
 .cabecalho div div {
     padding: 15px;
     display: flex;
@@ -77,25 +82,31 @@ body {
     color: #ffffff;
     font-size: 10px;
 }
+
 .cabecalho i {
     font-size: 25px;
 }
+
 #cabecalho-my-cdc {
     background: #00a000;
     transition: background .2s;
 }
+
 #cabecalho-my-device {
     background: #ffa500;
     transition: background .2s;
 }
+
 #cabecalho-my-cdc i {
     color: #008000;
     transition: .2s;
 }
+
 #cabecalho-my-device i {
     color: #c78100;
     transition: .2s;
 }
+
 #cabecalho-my-cdc:hover {
     background: #008000;
     transition: background .2s;
@@ -105,23 +116,26 @@ body {
     background: #d98d00;
     transition: background .2s;
 }
+
 #cabecalho-my-cdc:hover i {
     color: #006700;
     transform: scale(1.1);
     transition: .2s all;
 }
+
 #cabecalho-my-device:hover i {
     color: #ae7100;
     transform: scale(1.1);
     transition: .2s all;
 }
+
 .conteudo {
     width: 100%;
     height: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
     overflow: hidden;
     background: #ffffff;
     border-radius: 5px;
@@ -137,14 +151,17 @@ body {
     color: var(--white-color);
     font-style: italic;
 }
+
 .conteudo-cabecalho h3 {
     font-size: 13px;
     font-weight: bold;
 }
+
 .conteudo-cabecalho a {
     color: var(--white-color);
     font-weight: 300;
 }
+
 .conteudo-center {
     padding: 10px;
     display: flex;
@@ -152,12 +169,14 @@ body {
     flex-direction: column;
     overflow: scroll;
 }
+
 .conteudo-center h3 {
     font-size: 14px;
     width: 100%;
     text-align: center;
     margin-bottom: 10px;
 }
+
 .conteudo-center table {
     width: 100%;
     margin-bottom: 10px;
@@ -166,16 +185,19 @@ body {
     border: .1px solid #cdcdcd;
     box-shadow: .1em .2em .3em #cdcdcd;
 }
+
 .conteudo-center table thead {
     background: linear-gradient(to right, var(--primary-color), var(--terciary-color));
     color: var(--white-color);
     font-weight: bold;
 }
+
 .conteudo-center td {
     padding: 5px;
     text-align: center;
     border-bottom: .1px solid #cdcdcd;
 }
+
 .conteudo-center td a {
     text-decoration: none;
 }
@@ -193,10 +215,12 @@ body {
     font-weight: bold;
     cursor: pointer;
 }
+
 #conteudo-center-consulta table tr #btn-excluir {
     background: #ffcccc;
     color: #850000;
 }
+
 #conteudo-center-consulta table td form {
     width: fit-content;
     padding: 0;
@@ -220,20 +244,25 @@ body {
     border-radius: 5px;
     box-shadow: 0 0 .3em #cdcdcd;
 }
-.conteudo-center form .fa-circle-plus, .conteudo-center form .fa-square-pen {
+
+.conteudo-center form i {
     width: 100%;
     text-align: center;
     font-size: 25px;
     color: var(--secundary-color);
 }
+
 .conteudo-center form label {
     width: 140px;
 }
-.conteudo-center form label p{
+
+.conteudo-center form label p {
     margin-bottom: 2px;
     text-align: left;
 }
-.conteudo-center form input, .conteudo-center form select {
+
+.conteudo-center form input,
+.conteudo-center form select {
     width: 100%;
     padding: 7px 5PX;
     font-size: 10px;
@@ -241,21 +270,24 @@ body {
     border: none;
     border-radius: 3px;
 }
+
 .conteudo-center form select {
     padding: 7px 1px;
 }
-.conteudo-center form select {
-    padding: 4.5px 0;
-}
-.conteudo-center form input:focus, .conteudo-center form select:focus {
+
+.conteudo-center form input:focus,
+.conteudo-center form select:focus {
     outline-color: var(--primary-color);
 }
+
 .conteudo-center form select option {
     color: #303030;
 }
-input[type=number]::-webkit-inner-spin-button { 
+
+input[type=number]::-webkit-inner-spin-button {
     appearance: none;
 }
+
 .conteudo-center form div {
     width: 100%;
     margin-top: 15px;
@@ -264,7 +296,9 @@ input[type=number]::-webkit-inner-spin-button {
     justify-content: center;
     gap: 10px;
 }
-.conteudo-center form div button {
+
+.conteudo-center form div button,
+#btn-cancelar-edicao {
     width: 80px;
     padding: 5px;
     background: var(--primary-color);
@@ -274,9 +308,12 @@ input[type=number]::-webkit-inner-spin-button {
     font-size: 10px;
     cursor: pointer;
 }
-.conteudo-center form div #excluir {
-    background: #ff7171;
+
+.conteudo-center form div a {
+    text-decoration: none;
+    text-align: center;
 }
+
 .conteudo-center form div button:focus {
     outline-color: var(--secundary-color);
 }
@@ -284,15 +321,18 @@ input[type=number]::-webkit-inner-spin-button {
 .conteudo-cabecalho div {
     display: none !important;
 }
+
 #conteudo-center-consulta {
     flex-direction: column;
 }
+
 #conteudo-center-consulta form {
     margin-bottom: 20px;
     box-shadow: 0 0 .3em #cdcdcd;
     flex-direction: column;
     flex-wrap: nowrap;
 }
+
 #conteudo-center-consulta form label {
     width: 100%;
     display: flex;
@@ -300,28 +340,23 @@ input[type=number]::-webkit-inner-spin-button {
     justify-content: center;
     flex-direction: column;
 }
+
 #conteudo-center-consulta form p {
     padding: 0 10px;
     font-size: 10px;
     text-align: center;
 }
-#conteudo-center-consulta form label p{
+
+#conteudo-center-consulta form label p {
     font-size: 15px;
 }
+
 #conteudo-center-consulta form input {
     width: 70%;
 }
+
 #conteudo-center-consulta form div {
     margin-top: 5px;
-}
-#form-excluir {
-    width: fit-content;
-    padding: 0;
-    margin: 0 auto;
-    margin-top: 15px;
-}
-#form-excluir button {
-    background: #ff3e3e;
 }
 
 #btn-excel {
@@ -337,13 +372,16 @@ input[type=number]::-webkit-inner-spin-button {
     cursor: pointer;
     transition: .2s;
 }
+
 #btn-excel img {
     width: 100%;
 }
+
 #btn-excel:hover {
     transform: scale(1.1);
     transition: .2s;
 }
+
 .conteudo-rodape {
     width: 100%;
     padding: 5px;
@@ -352,56 +390,71 @@ input[type=number]::-webkit-inner-spin-button {
     text-align: center;
     font-size: 12px;
 }
-@media screen and (max-width: 720px)
-{
+
+@media screen and (max-width: 720px) {
     .conteudo-cabecalho div {
         display: block !important;
     }
-    #cabecalho-my-device, #cabecalho-my-cdc {
+
+    #cabecalho-my-device,
+    #cabecalho-my-cdc {
         display: none;
     }
+
     .corpo {
         padding: 10px;
     }
-    .cabecalho, .conteudo {
+
+    .cabecalho,
+    .conteudo {
         box-shadow: 0 0 .3em #cdcdcd;
     }
+
     .cabecalho {
         padding: 20px 20px 20px 15px;
         background: #ffffff;
         border-radius: 10px;
         justify-content: space-between;
     }
+
     .cabecalho img {
         width: 80px;
     }
+
     .cabecalho div {
         position: fixed;
         z-index: 2;
     }
 
-    #cabecalho-my-device, #cabecalho-my-cdc {
+    #cabecalho-my-device,
+    #cabecalho-my-cdc {
         padding: 10px;
         position: fixed;
         right: -125px;
         bottom: 40px;
         z-index: 2;
     }
+
     #cabecalho-my-device {
         right: -97px;
         bottom: 100px;
     }
+
     .conteudo {
         width: 100%;
     }
+
     .conteudo-cabecalho {
         padding: 10px;
     }
+
     .conteudo-cabecalho div {
         display: flex !important;
         gap: 10px;
     }
-    .conteudo-cabecalho .fa-house-laptop, .conteudo-cabecalho .fa-mobile-screen-button {
+
+    .conteudo-cabecalho .fa-house-laptop,
+    .conteudo-cabecalho .fa-mobile-screen-button {
         width: 30px;
         height: 30px;
         display: flex;
@@ -409,73 +462,91 @@ input[type=number]::-webkit-inner-spin-button {
         justify-content: center;
         border-radius: 60px;
     }
+
     .conteudo-cabecalho .fa-house-laptop {
         background: #008000;
     }
+
     .conteudo-cabecalho .fa-mobile-screen-button {
         background: #ffa500;
     }
-    
+
     .conteudo-center {
         width: 100%;
-        align-items:self-start;
+        align-items: self-start;
     }
+
     .conteudo-center table {
         font-size: 3px;
     }
+
     .conteudo-center table td {
         padding: 2px;
     }
+
     #conteudo-center-consulta table tr td p {
         padding: 2px;
     }
+
     .conteudo-center form {
         width: 100%;
         flex-direction: column;
         box-shadow: none;
     }
+
     .conteudo-center form .fa-circle-plus {
         margin-top: -15px;
     }
+
     .conteudo-center form label {
         width: 100%;
         border-radius: 5px;
         background: white;
     }
-    .conteudo-center form input, .conteudo-center form select {
+
+    .conteudo-center form input,
+    .conteudo-center form select {
         width: 100%;
         background: #ffffff;
         padding: 12px 8px;
         font-size: 13px;
     }
+
     .conteudo-center form select {
         padding: 10px 4px;
         color: #707070;
     }
+
     .conteudo-center form label p {
         margin: 6px;
         text-align: left;
         font-size: 14px;
     }
+
     .conteudo-center form div button {
         padding: 8px;
         font-size: 13px;
     }
+
     #conteudo-center-consulta {
         width: 100%;
     }
+
     #conteudo-center-consulta form input {
         width: 100%;
     }
+
     #form-excluir button {
         margin-top: -20px;
     }
+
     #conteudo-center-consulta table tr td button {
         width: 30px;
         padding: 2px;
         border-radius: 1px;
         font-size: 5px;
     }
+
     #btn-excel {
         bottom: 35px;
     }
